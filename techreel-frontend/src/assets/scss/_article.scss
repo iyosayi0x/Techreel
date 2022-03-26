@@ -1,0 +1,33 @@
+.article_wrapper {
+    padding:1rem;
+    width:70%;
+}
+.article_thumbnail {
+    width:90%;
+    object-fit: cover;
+    max-height:400px;
+    margin:1.4rem 0;
+    border-radius:.2rem;
+}
+.article_detail {
+    @include useFlexbox(flex-start , center);
+    gap:1rem;
+    margin:1.5rem 0 .7rem 0;
+    border-bottom:1px solid $secondary-color;
+    padding:1rem;
+    width:70%;
+}
+.article_title {
+    @include useSecondaryFont;
+    font-size:3rem;
+    width:90%;
+    margin-top:2rem;
+}
+.article_author {
+    font-weight:bolder;
+}
+@media screen and (max-width:1000px){
+    .article_wrapper {
+        max-width:100%;
+    }
+}

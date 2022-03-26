@@ -1,0 +1,28 @@
+.popularposts {
+    grid-row: 1;
+    grid-column:3;
+    padding:1rem;
+    border-radius:.4rem;
+}
+.popularposts h1 {
+    text-align:center;
+    position:relative;
+    padding:.4rem 1rem;
+    font-family: 'Roboto Slab', serif;
+}
+.popularposts .card_wrapper {
+    width: 100%;
+    @include useFlexbox(space-between , flex-start);
+    margin:.5rem auto;
+    gap:1rem;
+    padding:.7rem;
+}
+.popularposts .card_posturl {
+    text-decoration:none;
+    color:black;
+}
+.popularposts .card_thumbnail {
+    width:45%;
+    object-fit:cover;
+    border-radius:.3rem;
+}

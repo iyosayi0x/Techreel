@@ -1,0 +1,116 @@
+
+// footer
+.layout .footer {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding:4rem;
+    gap:1rem;
+    margin-top:4rem;
+    border:1px solid $secondary-color;
+}
+.layout .footer_section {
+    margin-bottom:2rem;
+}
+.layout .footer_section ul{
+    list-style: none;
+}
+.layout .footer_section:nth-child(2){
+    grid-row:span 2;
+}
+.layout .footer_heading{
+    @include useSecondaryFont;
+    font-size:1.4rem;
+}
+.layout .footer_section li {
+    font-size:.9rem;
+    margin:.2rem 0;
+    & >a {
+        text-decoration: none;
+        color:black;
+    }
+}
+.footer_cp {
+    text-align:center;
+    font-weight:bolder;
+    width:100%;
+    font-size:1.1rem;
+    grid-column:span 2;
+}
+@media screen and (max-width:1000px){
+    .layout .footer {
+        display:block;
+    }
+}
+
+// nav
+.layout .nav .nav_primary {
+    @include useFlexbox(center , flex-start);
+    list-style:none;
+    gap:2rem;
+    font-size:1.1rem;
+}
+.layout .nav_listitem{
+    color:white;
+    font-weight: bolder;
+    cursor:pointer;
+    & > a {
+        text-decoration: none;
+        color:white;
+        transition:.4s;
+    }
+    &:hover {
+        color:$primary-color;
+        & > a {
+            color:$primary-color;
+        }
+    }
+}
+.layout .searchbar {
+    position:fixed;
+    width:100%;
+    left:0;
+    top:1.5rem;
+    z-index:500;
+    .primarylayout_searchOverlay{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        padding:1rem;
+        background:rgba(black,.3);
+        z-index:400;
+    }
+    form{
+        width:80%;
+        position:relative;
+        z-index:410;
+        padding:1rem;
+        border-radius:.3rem;
+        border:1px solid $secondary-color;
+        background:white;
+        margin:1rem auto;
+        @include useFlexbox(center , flex-start);
+    }
+    input , button {
+        border:none;
+        padding:.6rem 1rem;
+        height:3.9rem;
+        outline:none;
+    }
+    input {
+        font-family: 'Poppins', sans-serif;
+        width:90%;
+        border-radius:.2rem 0 0 .2rem;
+        border:1px solid black;
+        &:focus {
+            border:1px solid $primary-color;
+        }
+    }
+    button {
+        background:blue;
+        color:white;
+        border-radius:0 .2rem .2rem 0;
+        cursor:pointer;
+    }
+}

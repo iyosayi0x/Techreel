@@ -1,0 +1,22 @@
+.tag_items_wrapper {
+    @include useGrid(1fr 1fr 1fr);
+}
+.tag h1 {
+    text-align: center;
+    margin-top:1rem;
+    &::first-letter{
+        text-transform: uppercase;
+    }
+}
+.tag_empty_state_message {
+    font-weight:bolder;
+    text-align: center;
+    font-size:1.3rem;
+}
+
+.tag_empty_state_image{
+    max-width:100%;
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+}
