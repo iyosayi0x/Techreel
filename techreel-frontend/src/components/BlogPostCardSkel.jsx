@@ -26,3 +26,21 @@ export const TextSkel=()=>{
     )
 }
 
+export const PopularPostSkel=()=>{
+    return (
+        <div className='skeleton_containter skel_flex'>
+            <div className='skeleton skel_blogPostText'/>
+            <div className='skeleton skel_imageSmall'/>
+            <Shimmer/>
+        </div>
+    )
+}
+
+export const FeaturedPostSkel=()=>{
+    return (
+        <div className='skeleton_containter skel_100'>
+            <div className='skeleton skel_featuredImage'/>
+            <Shimmer/>
+        </div>
+    )
+}
