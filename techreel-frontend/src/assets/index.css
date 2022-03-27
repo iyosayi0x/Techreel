@@ -680,6 +680,7 @@ html {
 @media screen and (max-width: 1000px) {
   .article_wrapper {
     min-width: 100%;
+    margin: 0 auto;
   }
 }
 
