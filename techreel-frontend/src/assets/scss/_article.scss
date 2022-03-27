@@ -3,9 +3,9 @@
     width:70%;
 }
 .article_thumbnail {
-    width:90%;
+    width:95%;
     object-fit: cover;
-    max-height:400px;
+    max-height:370px;
     margin:1.4rem 0;
     border-radius:.2rem;
 }
@@ -15,7 +15,7 @@
     margin:1.5rem 0 .7rem 0;
     border-bottom:1px solid $secondary-color;
     padding:1rem;
-    width:70%;
+    width:95%;
 }
 .article_title {
     @include useSecondaryFont;
@@ -26,9 +26,15 @@
 .article_author {
     font-weight:bolder;
 }
+.article_content{
+    width:95%;
+}
 @media screen and (max-width:1000px){
     .article_wrapper {
         min-width:100%;
         margin: 0 auto;
+    }
+    .article_thumbnail , .article_content , .article_detail{
+        width:100%;
     }
 }

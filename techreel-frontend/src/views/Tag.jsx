@@ -2,8 +2,8 @@ import {useParams} from 'react-router-dom'
 import {useState , useEffect} from 'react'
 import BlogPost from '../components/BlogPostCard'
 import axios from 'axios'
-import empty_state from '../assets/svg/empty_state.svg'
 import BlogPostCardSkel , {TextSkel} from '../components/BlogPostCardSkel'
+import EmptyState from '../components/EmptyState'
 
 const Tag=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -41,14 +41,7 @@ const Tag=()=>{
     },[tag])
 
     if(tagEmpty && !isLoading){
-        return (
-            <div className='tag'>
-                <img src={empty_state} alt='No content found' className='empty_state_image'/>
-                <section className='empty_state_message'>
-                    <p>Sorry we could not find any posts</p>
-                </section>
-            </div>
-        )
+        return <EmptyState parent_class='tag'/>
     }
 
     return (
