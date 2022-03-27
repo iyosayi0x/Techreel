@@ -39,6 +39,7 @@ const Search=()=>{
     }
     useEffect(()=>{
         postRequest(`${API_URL}blog/search/`, setQueriedPosts)
+        document.title = "Search filter - Techreel"
     },[search])
 
     if(searchNull && !isLoading){

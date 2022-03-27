@@ -37,6 +37,7 @@ const Tag=()=>{
     }
     useEffect(()=>{
         postRequest(`${API_URL}blog/tag/`, setQueriedPosts)
+        document.title = 'Tag filter - Techreel'
     },[tag])
 
     if(tagEmpty && !isLoading){
