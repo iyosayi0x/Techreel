@@ -26,7 +26,7 @@ const Search=()=>{
     }
     useEffect(()=>{
         postRequest(`${API_URL}blog/search/`, setQueriedPosts)
-    },[])
+    },[search])
 
     return (
         <div className='search'>
