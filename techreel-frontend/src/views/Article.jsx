@@ -19,7 +19,7 @@ const Article=()=>{
             setCallback(data)
 
             document.title=`${data?.title} -Techreel`
-        }catch(err){console.log(err)}
+        }catch(err){}
     }
     useEffect(()=>{
         getRequest(`${API_URL}blog/${article_slug}/`, setPost)

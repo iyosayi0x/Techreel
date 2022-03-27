@@ -1,6 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search'
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import Logo_blue from '../assets/svg/logo.svg'
 import CloseIcon from '@mui/icons-material/Close'
@@ -19,6 +19,9 @@ const NavSecondary=()=>{
             setShowSearch(false)
         }
     }
+    useEffect(()=>{
+        setNavClass('nav nav_hidden')
+    },[window.location.pathname])
     return (
         <section className='secondaryNav'>
             {

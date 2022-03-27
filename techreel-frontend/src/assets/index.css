@@ -514,7 +514,6 @@ html {
 }
 
 .blogpostcard {
-  margin: .6rem 0;
   position: relative;
 }
 
@@ -565,6 +564,12 @@ html {
   font-size: .8rem;
   font-weight: bolder;
   color: #0026ff;
+}
+
+@media screen and (max-width: 1000px) {
+  .blogpostcard {
+    margin: 2.5rem auto;
+  }
 }
 
 .popularposts {
@@ -816,6 +821,8 @@ html {
 .tag h1 {
   text-align: center;
   margin-top: 1rem;
+  font-size: 2.4rem;
+  font-family: "Roboto Slab", serif;
 }
 
 .tag h1::first-letter {

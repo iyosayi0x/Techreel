@@ -34,7 +34,6 @@ const Search=()=>{
             {
                 queriedPosts.map(queriedPost=>{
                     const {thumbnail , slug , title , id , exert, tags} = queriedPost
-                    console.log('yes')
                     return (<BlogPost
                         thumbnail_url={thumbnail}
                         exert={exert}

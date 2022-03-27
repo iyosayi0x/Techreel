@@ -22,6 +22,7 @@ const Tag=()=>{
         try {
             setIsLoading(true)
             setTagEmpty(false)
+            setQueriedPosts([])
             const res = await axios.post(api_url , body , config)
             const data = await res.data
             setCallback(data)
@@ -65,7 +66,6 @@ const Tag=()=>{
             {
                 queriedPosts.map(queriedPost=>{
                     const {thumbnail , slug , title , id , exert, tags} = queriedPost
-                    console.log('yes')
                     return (<BlogPost
                         thumbnail_url={thumbnail}
                         exert={exert}

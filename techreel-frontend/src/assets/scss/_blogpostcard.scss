@@ -1,5 +1,4 @@
 .blogpostcard {
-    margin:.6rem 0;
     position:relative;
     &:hover {
         img {
@@ -35,4 +34,10 @@
     font-size:.8rem;
     font-weight:bolder;
     color:$primary-color;
+}
+
+@media screen and (max-width:1000px){
+    .blogpostcard {
+        margin:2.5rem auto;
+    }
 }
