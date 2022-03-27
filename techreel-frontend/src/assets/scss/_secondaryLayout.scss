@@ -2,6 +2,9 @@
     & > a {
         color:black;
     }
+    & > a:active {
+        color:red;
+    }
 }
 .secondarylayout .secondaryNav {
     padding:2rem 0;

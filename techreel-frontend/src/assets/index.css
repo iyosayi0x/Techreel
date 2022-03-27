@@ -163,6 +163,21 @@ html {
   cursor: pointer;
 }
 
+.empty_state_message {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.empty_state_image {
+  max-width: 100%;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .primarylayout_header {
   background: -webkit-gradient(linear, left top, left bottom, from(#0000008e), to(transparent));
   background: linear-gradient(180deg, #0000008e, transparent);
@@ -342,6 +357,10 @@ html {
 
 .secondarylayout .nav_listitem > a {
   color: black;
+}
+
+.secondarylayout .nav_listitem > a:active {
+  color: red;
 }
 
 .secondarylayout .secondaryNav {
@@ -828,20 +847,6 @@ html {
 
 .tag h1::first-letter {
   text-transform: uppercase;
-}
-
-.tag_empty_state_message {
-  font-weight: bolder;
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-.tag_empty_state_image {
-  max-width: 100%;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .policy {

@@ -42,8 +42,8 @@ const Tag=()=>{
     if(tagEmpty && !isLoading){
         return (
             <div className='tag'>
-                <img src={empty_state} alt='No content found' className='tag_empty_state_image'/>
-                <section className='tag_empty_state_message'>
+                <img src={empty_state} alt='No content found' className='empty_state_image'/>
+                <section className='empty_state_message'>
                     <p>Sorry we could not find any posts</p>
                 </section>
             </div>

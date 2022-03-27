@@ -1,0 +1,13 @@
+.empty_state_message {
+    font-weight:bolder;
+    text-align: center;
+    font-size:1.3rem;
+    @include useSecondaryFont;
+}
+
+.empty_state_image{
+    max-width:100%;
+    position: relative;
+    left:50%;
+    transform:translateX(-50%);
+}

@@ -3,6 +3,7 @@ import {useState , useEffect} from 'react'
 import BlogPost from '../components/BlogPostCard'
 import axios from 'axios'
 import BlogPostCardSkel from '../components/BlogPostCardSkel'
+import empty_state from '../assets/svg/empty_state.svg'
 
 const Search=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -43,7 +44,12 @@ const Search=()=>{
     if(searchNull && !isLoading){
         return (
             <div className='search'>
-                search returned nulll
+                <img src={empty_state} alt='No content found' className='empty_state_image'/>
+                <section className='empty_state_message'>
+                    <p>
+                        No results found
+                    </p>
+                </section>
             </div>
         )
     }

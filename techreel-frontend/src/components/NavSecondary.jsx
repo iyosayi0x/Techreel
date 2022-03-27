@@ -21,7 +21,7 @@ const NavSecondary=()=>{
     }
     useEffect(()=>{
         setNavClass('nav nav_hidden')
-    },[window.location.pathname])
+    },[window.location.href])
     return (
         <section className='secondaryNav'>
             {
