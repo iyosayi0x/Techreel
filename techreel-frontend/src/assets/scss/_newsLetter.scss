@@ -1,0 +1,21 @@
+.news_letter_form_overlay{
+    position:fixed;
+    background:rgba(black,.4);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.news_letter_form_wrapper form {
+    background:white;
+    height:50%;
+    width:50%;
+    max-width:400px;
+    padding:1rem;
+    border-radius:.4rem;
+    @include transformTraslateXCenter(relative);
+}
+.news_letter_form_field {
+    @include useFlexbox(center , center);
+    width:fit-content;
+}
