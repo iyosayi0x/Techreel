@@ -10,9 +10,7 @@
     transform:translateX(-90%)
 }
 .notfound_infowrapper {
-    position:absolute;
-    top:40%;
-    transform:translateY(-40%);
+    @include transformTranslateYpos(40% , absolute);
     left:2rem;
     z-index:300;
     h1 {

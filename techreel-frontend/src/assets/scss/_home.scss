@@ -16,9 +16,7 @@
     font-weight:bolder;
     font-size:1.1rem;
     margin:2rem auto;
-    position:relative;
-    left:50%;
-    transform:translateX(-50%);
+    @include transformTraslateXCenter(relative);
     &:hover {
         color:white;
         background:$primary-color;

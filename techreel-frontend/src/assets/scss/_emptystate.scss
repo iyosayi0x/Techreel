@@ -7,7 +7,5 @@
 
 .empty_state_image{
     max-width:100%;
-    position: relative;
-    left:50%;
-    transform:translateX(-50%);
+    @include transformTraslateXCenter(relative);
 }
