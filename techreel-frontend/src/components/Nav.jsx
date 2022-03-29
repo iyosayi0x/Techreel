@@ -4,6 +4,7 @@ import {useState} from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import Logo_blue from '../assets/svg/logo.svg'
 import CloseIcon from '@mui/icons-material/Close'
+import NewsLetter from './NewsLetter'
 
 const Nav=()=>{
     const [navClass , setNavClass] = useState('nav nav_hidden')
@@ -60,6 +61,7 @@ const Nav=()=>{
                     <li className='nav_listitem'>
                         <Link to='/tag/reviews/'>Reviews</Link>
                     </li>
+                    <NewsLetter list_class='nav_btn_primary'/>
                     <div className='icon_wrapper_trans' onClick={()=>setShowSearch(true)}>
                         <SearchIcon/>
                     </div>
