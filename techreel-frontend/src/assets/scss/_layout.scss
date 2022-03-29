@@ -36,11 +36,6 @@
     font-size:1.1rem;
     grid-column:span 2;
 }
-@media screen and (max-width:1000px){
-    .layout .footer {
-        display:block;
-    }
-}
 .layout .nav_btn_primary , .layout .nav_btn_secondary {
     cursor:pointer;
     border:none;
@@ -128,5 +123,13 @@
         color:white;
         border-radius:0 .2rem .2rem 0;
         cursor:pointer;
+    }
+}
+@media screen and (max-width:1000px){
+    .layout .footer {
+        display:block;
+    }
+    .layout .nav_btn_primary{
+        background:$primary-color;
     }
 }

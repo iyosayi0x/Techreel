@@ -30,9 +30,16 @@ html {
     left:50%;
     transform: translateX(-50%);
 }
-@mixin transformTranslateXpos($position, $percent){
+@mixin transformTranslateYpos($percent,$position){
+    position:$position;
     top:($percent);
-    transform:translateY(percent)
+    transform:translateY(-$percent)
+}
+@mixin transformTranslatePos($xPercent , $yPercent , $position){
+    position:$position;
+    left:$xPercent;
+    top:$yPercent;
+    transform: translate(-$xPercent , -$yPercent);
 }
 @mixin useSecondaryFont{
     font-family:$secondary-font;

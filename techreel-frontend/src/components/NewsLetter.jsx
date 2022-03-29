@@ -10,6 +10,7 @@ const NewsLetter=({list_class})=>{
 
     const toggleVisibility=()=>{
         setShowNewsLetter(prevShowNewsLetter => !prevShowNewsLetter)
+        setMessage({})
     }
 
     const handleSubmit=async(e)=>{
@@ -25,8 +26,8 @@ const NewsLetter=({list_class})=>{
             const res = await axios.post(`${API_URL}newsletter/signup/` , body , config)
             const message = await res.data
             setMessage(message)
-            setIsLoading(false)
-        }catch(err){
+        }catch(err){}finally{
+            setEmail('')
             setIsLoading(false)
         }
     }
@@ -40,15 +41,26 @@ const NewsLetter=({list_class})=>{
                     <div className='news_letter_form_overlay' onClick={toggleVisibility}/>
                     <section className='news_letter_form_wrapper'>
                         <form onSubmit={handleSubmit}>
-                            Sign up for the newsletter
+                            <p className='news_letter_bold_text'> Subscribe!</p>
+                            <p className='news_letter_description'>Subsribe to our newsletter so you wont miss any updates on tech and best deals.</p>
                             <div className='news_letter_form_field'>
-                                <label htmlFor='email'>Email</label>
+
+                                {message?.description?.success && <div className='message_success news_letter_message'>{message.description?.success}</div>}
+                                {message?.description?.error && <div className='message_error news_letter_message'>{message.description?.error}</div>}
+
+                                <div className='news_letter_label_wrapper'>
+                                    <label htmlFor='email'>Email</label>
+                                </div>
+
                                 <input type='email'
                                 name='email'
                                 value={email}
                                 onChange={e=>setEmail(e.target.value)}
                                 required={true}
                                 />
+                                <br/>
+                                {!isLoading && <input type='submit' value='Subsribe'/>}
+                                {isLoading && <button className='news_letter_loading_btn'>Loading...</button>}
                             </div>
                         </form>
                     </section>
