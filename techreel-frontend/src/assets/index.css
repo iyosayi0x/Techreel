@@ -789,11 +789,14 @@ html {
   }
 }
 
-.about {
+/*
+    For both about and sitemap page
+*/
+.about, .sitemap {
   padding: 1rem 2rem;
 }
 
-.about_header {
+.about_header, .sitemap_header {
   font-family: "Roboto Slab", serif;
   font-weight: bolder;
   margin: 2rem 0;
@@ -802,6 +805,9 @@ html {
   border-bottom: 1px solid #f0f0f0;
 }
 
+/*
+    For only about page
+*/
 .about_section {
   font-weight: 500;
   padding: 0 2rem;
@@ -842,6 +848,9 @@ html {
   gap: .5rem;
 }
 
+/*
+    For only the sitemap page
+*/
 .search_items_wrapper {
   display: -ms-grid;
   display: grid;
@@ -1048,6 +1057,7 @@ html {
 
 .news_letter {
   font-family: 'Poppins', sans-serif;
+  z-index: 400;
 }
 
 .news_letter_form_overlay {

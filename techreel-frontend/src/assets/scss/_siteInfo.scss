@@ -1,7 +1,10 @@
-.about {
+/*
+    For both about and sitemap page
+*/
+.about , .sitemap {
     padding:1rem 2rem;
 }
-.about_header {
+.about_header , .sitemap_header {
     @include useSecondaryFont;
     font-weight:bolder;
     margin:2rem 0;
@@ -9,6 +12,10 @@
     font-size:2.5rem;
     border-bottom:1px solid $secondary-color;
 }
+
+/*
+    For only about page
+*/
 .about_section {
     font-weight:500;
     padding:0 2rem;
@@ -35,3 +42,7 @@
         gap:.5rem;
     }
 }
+
+/*
+    For only the sitemap page
+*/
