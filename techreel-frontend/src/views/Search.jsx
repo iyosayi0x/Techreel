@@ -4,7 +4,7 @@ import BlogPost from '../components/BlogPostCard'
 import axios from 'axios'
 import BlogPostCardSkel from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
-
+import {Helmet} from 'react-helmet'
 
 const Search=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -40,7 +40,6 @@ const Search=()=>{
     }
     useEffect(()=>{
         postRequest(`${API_URL}blog/search/`, setQueriedPosts)
-        document.title = "Search filter - Techreel"
     },[search])
 
     if(searchNull && !isLoading){
@@ -49,6 +48,10 @@ const Search=()=>{
 
     return (
         <div className='search'>
+            <Helmet>
+                <title>Search filter - Techreel</title>
+                <meta name='description' content='explore by filtering posts based on search'/>
+            </Helmet>
             <div className='search_items_wrapper'>
                 {isLoading && (
                     <>

@@ -1,14 +1,15 @@
 import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import {useEffect} from 'react'
+import {Helmet} from 'react-helmet'
 
 const About=()=>{
-    useEffect(()=>{
-        document.title = "About Techreel - Techreel"
-    },[])
     return (
         <div className='about'>
+            <Helmet>
+                <title>About Techreel - Techreel</title>
+                <meta name='description' content='About techreel'/>
+            </Helmet>
             <h1 className='about_header'>About Us</h1>
             <div className='about_section'>
                 <p>

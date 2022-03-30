@@ -1,10 +1,11 @@
-import {useEffect} from 'react'
+import {Helmet} from 'react-helmet'
+
 const PrivacyPolicy=()=>{
-    useEffect(()=>{
-        document.title = 'Privacy policy - Techreel'
-    },[])
     return (
         <div className='policy'>
+            <Helmet>
+                <title>Privacy policy - Techreel</title>
+            </Helmet>
 
             <h2 ><b>PRIVACY POLICY</b></h2>
             <p>Effective date: 2022-04-07</p>

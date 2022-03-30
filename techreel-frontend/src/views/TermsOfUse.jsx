@@ -1,11 +1,10 @@
-import {useEffect} from 'react'
+import {Helmet} from 'react-helmet'
 const TermsOfUse=()=>{
-    useEffect(()=>{
-        document.title = 'Terms of use - Techreel'
-    },[])
     return (
         <div className='policy'>
-
+            <Helmet>
+                <title>Terms of use - Techreel</title>
+            </Helmet>
         <h2>
             <b>TERMS OF USE</b>
         </h2>

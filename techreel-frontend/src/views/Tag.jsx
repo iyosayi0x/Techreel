@@ -4,6 +4,7 @@ import BlogPost from '../components/BlogPostCard'
 import axios from 'axios'
 import BlogPostCardSkel , {TextSkel} from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
+import {Helmet} from 'react-helmet'
 
 const Tag=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -37,7 +38,6 @@ const Tag=()=>{
     }
     useEffect(()=>{
         postRequest(`${API_URL}blog/tag/`, setQueriedPosts)
-        document.title = 'Tag filter - Techreel'
     },[tag])
 
     if(tagEmpty && !isLoading){
@@ -46,6 +46,10 @@ const Tag=()=>{
 
     return (
         <div className='tag'>
+            <Helmet>
+                <title>Tag filter - Techreel</title>
+                <meta name='description' content='Explore posts based on tag filter'/>
+            </Helmet>
             {!isLoading && <h1>{tag}</h1>}
             {isLoading && <TextSkel/>}
             <div className='tag_items_wrapper'>

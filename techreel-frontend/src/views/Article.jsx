@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NotFound from './NotFound'
+import {Helmet} from 'react-helmet'
 
 const Article=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -21,7 +22,6 @@ const Article=()=>{
             const data = await res.data
             setCallback(data)
             setIsLoading(false)
-            document.title=`${data?.title} -Techreel`
         }catch(err){
             setError404(true)
         }
@@ -46,6 +46,10 @@ const Article=()=>{
 
     return (
         <div className='article_wrapper'>
+            <Helmet>
+                <title>{`${post?.title}`} - Techreel</title>
+                <meta name='description' content={`${post?.title}`}/>
+            </Helmet>
             <h1 className='article_title'>{post?.title}</h1>
             <div className='article_detail'>
                 <p className='article_author'>iyosayi</p>

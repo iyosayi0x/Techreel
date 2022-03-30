@@ -4,6 +4,7 @@ import PopularPosts from '../components/PopularPost'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import BlogPostCardSkel , {PopularPostSkel , FeaturedPostSkel} from '../components/BlogPostCardSkel'
+import {Helmet} from 'react-helmet'
 
 const Home=()=>{
     // Backend api url
@@ -81,11 +82,17 @@ const Home=()=>{
         getRequest(`${API_URL}blog/featured/`, setFeaturedPosts , 'featuredPostLoading')
         getRequest(`${API_URL}blog/popular/`, setPopularPosts , 'popularPostLoading')
         getBlogPosts()
-        document.title = "Latest updates in the world of tech - Techreel"
+        // document.title = "Latest updates in the world of tech - Techreel"
     },[])
 
     return (
         <div className='home_wrapper'>
+
+        <Helmet>
+            <title>Latest updated in the world of tech - Techreel</title>
+            <meta name='description' content='Get the latest updates in tech and best deals on new gadgets , laptop, phones , updates in the world of programming and lots more'/>
+            <meta name='keywords' content='Tech , Technology , Programming , Phones , Laptops , Tv , Gadgets , Deals'/>
+        </Helmet>
 
                 {
                     !loading.featuredPostLoading  && <section className='home_featured'>
