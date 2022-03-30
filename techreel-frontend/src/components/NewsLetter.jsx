@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 const NewsLetter=({list_class})=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -62,6 +63,7 @@ const NewsLetter=({list_class})=>{
                                 {!isLoading && <input type='submit' value='Subsribe'/>}
                                 {isLoading && <button className='news_letter_loading_btn'>Loading...</button>}
                             </div>
+                            <p className='news_letter_footer'>By clicking “Subscribe” you agree to Techreel's <Link to='/privacy-policy/'>Privacy Policy</Link> and consent to Techreel using your contact data for newsletter purposes</p>
                         </form>
                     </section>
                     </>
