@@ -6,4 +6,4 @@ from django.urls import reverse, resolve
 class TestUrls(SimpleTestCase):
     def test_signup_resolves(self):
         url = reverse('newsletter_signup')
-        self.assertEquals(resolve(url).func.view_class, NewsLetterSignUpView)
+        self.assertEqual(resolve(url).func.view_class, NewsLetterSignUpView)
