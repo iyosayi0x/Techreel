@@ -30,7 +30,10 @@ class BlogPostListView(ListAPIView):
 class BlogPostSearchView(APIView):
     def post(self, request):
         data = request.data
-        search_term = data.get('search_term')
+        search_term = data.get('search_term', None)
+        if search_term is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
         search_term_list = search_term.split()
         lookup = Q()
         # loop over search terms
@@ -47,7 +50,10 @@ class BlogPostSearchView(APIView):
 class BlogPostTagFilterView(APIView):
     def post(self, request):
         data = request.data
-        tag = data.get('tag')
+        tag = data.get('tag', None)
+        if tag is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
         queryset = BlogPost.objects.filter(tags__icontains=tag)
         serializer = BlogPostSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

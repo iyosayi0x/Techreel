@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 class TestViews(TestCase):
-    def setup(self):
+    def setUp(self):
         self.client = Client()
 
     def test_newsletter_sign_up_view(self):
@@ -13,3 +13,8 @@ class TestViews(TestCase):
         })
         self.assertEqual(request.status_code, 200)
         self.assertEqual(request['content-type'], 'application/json')
+
+    def test_newsletter_sign_up_view_noData(self):
+        url = reverse('newsletter_signup')
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, 400)

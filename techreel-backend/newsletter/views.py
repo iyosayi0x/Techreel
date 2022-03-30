@@ -9,10 +9,11 @@ class NewsLetterSignUpView(APIView):
     def post(self, request):
         data = request.data
         email = data.get('email', None)
-        normalized_email = email.strip().lower()
 
         if email is None:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+        normalized_email = email.strip().lower()
 
         try:
             # user exists ? ->  return error
