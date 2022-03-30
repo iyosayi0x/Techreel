@@ -1169,3 +1169,15 @@ html {
       -ms-user-select: none;
           user-select: none;
 }
+
+.news_letter_footer {
+  font-size: .85rem;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.news_letter_footer a {
+  text-decoration: none;
+  color: #0026ff;
+}

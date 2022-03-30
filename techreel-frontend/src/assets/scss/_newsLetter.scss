@@ -91,3 +91,13 @@
     margin:.6rem auto;
     user-select: none;
 }
+.news_letter_footer {
+    font-size:.85rem;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    a {
+        text-decoration: none;
+        color:$primary-color;
+    }
+}
