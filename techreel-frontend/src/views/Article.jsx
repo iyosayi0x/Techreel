@@ -48,7 +48,13 @@ const Article=()=>{
         <div className='article_wrapper'>
             <Helmet>
                 <title>{`${post?.title}`} - Techreel</title>
-                <meta name='description' content={`${post?.title}`}/>
+                <meta name='description' content={`${post?.exert}`}/>
+                <meta property="og:title" content={`${post?.title}`}/>
+                <meta property="og:description" content={`${post?.exert}`}/>
+                <meta property="og:image" content={`${post?.thumbnail}`}/>
+                <meta property="og:type" content="article" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
             </Helmet>
             <h1 className='article_title'>{post?.title}</h1>
             <div className='article_detail'>

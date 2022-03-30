@@ -46,10 +46,12 @@ const Tag=()=>{
 
     return (
         <div className='tag'>
+
             <Helmet>
-                <title>Tag filter - Techreel</title>
+                <title>Tag Explore - {tag}</title>
                 <meta name='description' content='Explore posts based on tag filter'/>
             </Helmet>
+
             {!isLoading && <h1>{tag}</h1>}
             {isLoading && <TextSkel/>}
             <div className='tag_items_wrapper'>

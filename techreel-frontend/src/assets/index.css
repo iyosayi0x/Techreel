@@ -661,6 +661,10 @@ html {
   border-radius: .3rem;
 }
 
+.popularposts .card_title {
+  font-weight: bold;
+}
+
 .article_wrapper {
   padding: 1rem;
   width: 70%;
