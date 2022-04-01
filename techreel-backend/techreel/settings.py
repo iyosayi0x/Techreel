@@ -16,8 +16,7 @@ import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
-
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sitemaps',
 
     # apps
     'corsheaders',
@@ -100,7 +101,7 @@ DATABASES = {
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST':os.environ.get('DATABASE_HOST'),
+        'HOST': os.environ.get('DATABASE_HOST'),
     }
 }
 
@@ -123,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK =  {
+REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny'
     ]
@@ -158,11 +159,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
     'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET':os.environ.get('API_SECRET')
+    'API_SECRET': os.environ.get('API_SECRET')
 }
 
 
-CORS_ALLOWED_ORIGINS =[
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://techreel.co',
 ]

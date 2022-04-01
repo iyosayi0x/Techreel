@@ -2,6 +2,7 @@ from django.db import models
 from authors.models import Author
 from django.contrib.postgres.fields import ArrayField
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 
 class TagChoices(models.TextChoices):
@@ -45,6 +46,9 @@ class BlogPost (models.Model):
                 queryset[0].save()
 
         super(BlogPost, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return f'/{self.slug}'
 
     def __str__(self):
         return self.title
