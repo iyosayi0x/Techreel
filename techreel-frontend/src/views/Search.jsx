@@ -4,7 +4,7 @@ import BlogPost from '../components/BlogPostCard'
 import axios from 'axios'
 import BlogPostCardSkel from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const Search=()=>{
     const API_URL = import.meta.env.VITE_API_URL

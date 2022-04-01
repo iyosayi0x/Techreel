@@ -12,9 +12,9 @@ const LayoutFooter=()=>{
             <div className='footer_section'>
                 <h3 className='footer_heading'>Social Media</h3>
                 <ul>
-                    <li><a target='_blank' href='https://twitter.com/techreel_co'>Twitter</a></li>
-                    <li><a target='_blank' href='https://facebook.com/techreel_co'>Facebook</a></li>
-                    <li><a target='_blank' href='https://instagram.com/techreel_co'>Instagram</a></li>
+                    <li><a target='_blank' href='https://twitter.com/techreel_co'nofollow='true'>Twitter</a></li>
+                    <li><a target='_blank' href='https://facebook.com/techreel_co'nofollow='true'>Facebook</a></li>
+                    <li><a target='_blank' href='https://instagram.com/techreel_co'nofollow='true'>Instagram</a></li>
                 </ul>
             </div>
             <div className='footer_section'>

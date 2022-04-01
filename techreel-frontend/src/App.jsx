@@ -11,7 +11,6 @@ import PrivacyPolicy from "./views/PrivacyPolicy"
 import TermsOfUse from "./views/TermsOfUse"
 import Tag from './views/Tag'
 import UseScrollTop from './hooks/useScrollTop'
-import {Helmet} from 'react-helmet'
 
 
 function App() {

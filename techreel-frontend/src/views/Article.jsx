@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NotFound from './NotFound'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const Article=()=>{
     const API_URL = import.meta.env.VITE_API_URL

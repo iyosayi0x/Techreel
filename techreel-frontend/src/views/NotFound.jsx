@@ -1,7 +1,7 @@
 import notfound_svg from '../assets/svg/notfound.svg'
 import {Link} from 'react-router-dom'
 import ArrowLeft from '@mui/icons-material/ArrowRightAlt'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const NotFound=()=>{
     return (

@@ -4,7 +4,7 @@ import PopularPosts from '../components/PopularPost'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import BlogPostCardSkel , {PopularPostSkel , FeaturedPostSkel} from '../components/BlogPostCardSkel'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const Home=()=>{
     // Backend api url

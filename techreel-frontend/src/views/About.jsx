@@ -1,7 +1,7 @@
 import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const About=()=>{
     return (
