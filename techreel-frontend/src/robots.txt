@@ -1,0 +1,3 @@
+user-agent:*
+Allow: /
+sitemap:https://res.cloudinary.com/gamemojo/raw/upload/v1648819195/techreel-prod/sitemap/sitemap_fsuxvg.xml
