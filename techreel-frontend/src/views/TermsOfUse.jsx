@@ -4,6 +4,8 @@ const TermsOfUse=()=>{
         <div className='policy'>
             <Helmet>
                 <title>Terms of use - Techreel</title>
+                <meta name='og:title' content='Terms of use - Techreel'/>
+                <meta name='description' content='Terms of use'/>
             </Helmet>
         <h2>
             <b>TERMS OF USE</b>

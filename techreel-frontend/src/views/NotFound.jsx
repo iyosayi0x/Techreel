@@ -8,6 +8,7 @@ const NotFound=()=>{
         <div className='notfound'>
             <Helmet>
                 <title>404 Notfound - Techreel</title>
+                <meta name='og:title' content='404 Notfound -Techreel'/>
                 <meta name='description' content='404 page not found'/>
             </Helmet>
             <div className='notfound_infowrapper'>

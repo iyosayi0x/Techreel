@@ -50,7 +50,8 @@ const Search=()=>{
         <div className='search'>
             <Helmet>
                 <title>Search filter - Techreel</title>
-                <meta name='description' content='explore by filtering posts based on search'/>
+                <meta name='og:title' content='Search filter - Techreel'/>
+                <meta name='description' content='Explore by filtering posts based on search'/>
             </Helmet>
             <div className='search_items_wrapper'>
                 {isLoading && (

@@ -5,6 +5,8 @@ const PrivacyPolicy=()=>{
         <div className='policy'>
             <Helmet>
                 <title>Privacy policy - Techreel</title>
+                <meta name='description' content='Privacy policy'/>
+                <meta name='og:title' content='Privacy policy'/>
             </Helmet>
 
             <h2 ><b>PRIVACY POLICY</b></h2>

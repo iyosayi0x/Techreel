@@ -49,6 +49,7 @@ const Tag=()=>{
 
             <Helmet>
                 <title>Tag Explore - {tag}</title>
+                <meta name='og:title' content='Tag Explore'/>
                 <meta name='description' content='Explore posts based on tag filter'/>
             </Helmet>
 
