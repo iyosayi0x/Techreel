@@ -11,11 +11,11 @@ const NotFound=()=>{
                 <meta name='og:title' content='404 Notfound -Techreel'/>
                 <meta name='description' content='404 page not found'/>
             </Helmet>
+            <img src={notfound_svg} alt='404 image' className='notfound_image'/>
             <div className='notfound_infowrapper'>
                 <h1>PAGE NOT FOUND</h1>
                 <p>Sorry the page you're looking for could not be found :(</p>
             </div>
-            <img src={notfound_svg} alt='404 image' className='notfound_image'/>
             <div className='notfound_linkwrapper'>
                 <Link to='/'>Back to home<ArrowLeft/></Link>
             </div>

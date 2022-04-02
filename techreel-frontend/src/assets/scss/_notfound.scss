@@ -38,17 +38,25 @@
 
 @media screen and (max-width:1000px){
     .notfound_infowrapper{
+        position: relative;
+        left:0;
+        width:fit-content;
+        margin: 0 auto;
+        transform:None;
+        text-align:center;
         h1 {
             font-size:1.3rem;
+            text-align:center;
+            margin:.4rem auto;
         }
         p {
             font-size:.8rem;
-            width:50%;
+            margin:.6rem auto;
         }
     }
     .notfound_image{
-        margin:2rem 0;
-        padding:2rem 0 0 3rem;
         width:70%;
+        left:50%;
+        transform:translateX(-50%)
     }
 }
