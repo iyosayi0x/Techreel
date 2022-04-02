@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import environ
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +24,10 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fg&8*juk*zl!+7f1*tv&#9*k7dvqmom#l$*rzpv5y9^qa1_qol'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['techreel.herokuapp.com', 'techreel.co', 'localhost']
 
@@ -152,7 +153,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = 'staticfiles/'
 STATIC_FILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/techreel/media/'
+MEDIA_URL = '/techreel-prod/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -165,7 +166,11 @@ CLOUDINARY_STORAGE = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+
     'https://techreel.co',
+
+    'https://techreel.herokuapp.com',
+    'http://techreel.herokuapp.com'
 ]
 
 AUTH_USER_MODEL = 'accounts.Account'
@@ -174,3 +179,5 @@ AUTH_USER_MODEL = 'accounts.Account'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals(), staticfiles=False)
