@@ -12,7 +12,8 @@ from .utils import BlogPostPagination
 
 
 class BlogPostFeaturedView(ListAPIView):
-    queryset = BlogPost.objects.all().filter(featured=True)
+    queryset = BlogPost.objects.all().filter(
+        featured=True).order_by('-date_created')
     serializer_class = BlogPostSerializer
 
 # works
