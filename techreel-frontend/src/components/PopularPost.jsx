@@ -1,6 +1,9 @@
 import PopularPostCard from './PopularPostCard'
 
 const PopularPosts=({popularPosts})=>{
+    if (popularPosts.length <= 0) {
+        return <></>
+    }
     return (
         <section className='popularposts'>
             <h1>Popular posts</h1>
