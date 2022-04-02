@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NotFound from './NotFound'
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const Article=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -43,6 +44,11 @@ const Article=()=>{
             <p>Working on it...</p>
         </div>
     }
+
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
 
     return (
         <div className='article_wrapper'>

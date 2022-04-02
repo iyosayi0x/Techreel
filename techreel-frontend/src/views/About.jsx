@@ -2,8 +2,13 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const About=()=>{
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
     return (
         <div className='about'>
             <Helmet>

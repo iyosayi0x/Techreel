@@ -1,5 +1,10 @@
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 const Sitemap=()=>{
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
     return (
         <div className='sitemap'>
             <Helmet>

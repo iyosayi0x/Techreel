@@ -5,6 +5,7 @@ import axios from 'axios'
 import BlogPostCardSkel , {TextSkel} from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const Tag=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -45,6 +46,11 @@ const Tag=()=>{
             request.then(request.then(controller =>controller.abort()))
         }
     },[tag])
+
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
 
     if(tagEmpty && !isLoading){
         return <EmptyState parent_class='tag'/>

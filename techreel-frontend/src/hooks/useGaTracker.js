@@ -1,8 +1,8 @@
-import {useEffect} from 'react-router-dom'
+import {useEffect} from 'react'
 import ReactGA from 'react-ga4';
 
 // Tracking id for google analytics
-const MEASUREMENT_ID = ''
+const MEASUREMENT_ID = 'G-VGX2K261D5'
 const useGaTracker=()=>{
     useEffect(() => {
         /*
@@ -19,6 +19,9 @@ const useGaTracker=()=>{
 export default useGaTracker
 
 export const useAnalyticsEventTracker = (category , action , label) => {
+    if(window.location.host==='techreel.co'){
         ReactGA.event({category, action, label});
         return eventTracker;
+    }
+    return {}
 }

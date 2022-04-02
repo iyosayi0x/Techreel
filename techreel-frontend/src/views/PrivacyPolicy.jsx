@@ -1,6 +1,11 @@
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const PrivacyPolicy=()=>{
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
     return (
         <div className='policy'>
             <Helmet>

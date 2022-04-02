@@ -1,5 +1,8 @@
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
+
 const TermsOfUse=()=>{
+    useGaTracker()
     return (
         <div className='policy'>
             <Helmet>

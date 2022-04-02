@@ -5,6 +5,7 @@ import axios from 'axios'
 import BlogPostCardSkel from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const Search=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -46,6 +47,11 @@ const Search=()=>{
             request.then(controller => controller.abort())
         }
     },[search])
+
+    /*
+        google analytics tracker
+    */
+        useGaTracker()
 
     if(searchNull && !isLoading){
         return <EmptyState parent_class='search'/>

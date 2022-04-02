@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import BlogPostCardSkel , {PopularPostSkel , FeaturedPostSkel} from '../components/BlogPostCardSkel'
 import {Helmet} from 'react-helmet-async'
+import useGaTracker from '../hooks/useGaTracker'
 
 const Home=()=>{
     // Backend api url
@@ -93,6 +94,10 @@ const Home=()=>{
         }
     },[])
 
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
     return (
         <div className='home_wrapper'>
 
