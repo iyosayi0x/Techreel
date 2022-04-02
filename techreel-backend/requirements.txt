@@ -11,6 +11,7 @@ django-environ==0.8.1
 django-heroku==0.3.1
 django-summernote==0.8.20.0
 djangorestframework==3.13.1
+gunicorn==20.1.0
 idna==3.3
 packaging==21.3
 Pillow==9.0.1
