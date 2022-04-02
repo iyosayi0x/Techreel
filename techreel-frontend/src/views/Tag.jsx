@@ -22,21 +22,23 @@ const Tag=()=>{
             },
             signal: controller.signal
         }
-        const body = JSON.stringify({tag})
-        try {
-            setIsLoading(true)
-            setTagEmpty(false)
-            setQueriedPosts([])
-            const res = await axios.post(api_url , body , config)
-            const data = await res.data
-            setCallback(data)
-            if(data.length === 0){
+        if(tag.trim()){
+            const body = JSON.stringify({tag})
+            try {
+                setIsLoading(true)
+                setTagEmpty(false)
+                setQueriedPosts([])
+                const res = await axios.post(api_url , body , config)
+                const data = await res.data
+                setCallback(data)
+                if(data.length === 0){
+                    setTagEmpty(true)
+                }
+                setIsLoading(false)
+            }catch(err){
+                setIsLoading(false)
                 setTagEmpty(true)
             }
-            setIsLoading(false)
-        }catch(err){
-            setIsLoading(false)
-            setTagEmpty(true)
         }
         return controller
     }

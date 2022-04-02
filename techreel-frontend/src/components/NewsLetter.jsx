@@ -1,8 +1,14 @@
 import {useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {useAnalyticsEventTracker} from '../hooks/useGaTracker'
 
 const NewsLetter=({list_class})=>{
+    /*
+        Ga analytics event tracker
+    */
+    const evtTracker = useAnalyticsEventTracker('Newsletter')
+
     const API_URL = import.meta.env.VITE_API_URL
     const [showNewsLetter, setShowNewsLetter] = useState(false)
     const [email, setEmail] = useState('')
@@ -12,6 +18,7 @@ const NewsLetter=({list_class})=>{
     const toggleVisibility=()=>{
         setShowNewsLetter(prevShowNewsLetter => !prevShowNewsLetter)
         setMessage({})
+        evtTracker('newsletter form toggle')
     }
 
     const handleSubmit=async(e)=>{
@@ -24,6 +31,7 @@ const NewsLetter=({list_class})=>{
         const body = JSON.stringify({email})
         try {
             setIsLoading(true)
+            evtTracker('user attempt newsletter signup')
             const res = await axios.post(`${API_URL}newsletter/signup/` , body , config)
             const message = await res.data
             setMessage(message)
@@ -32,6 +40,7 @@ const NewsLetter=({list_class})=>{
             setIsLoading(false)
         }
     }
+
 
     return (
         <main className='news_letter'>

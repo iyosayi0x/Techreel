@@ -32,6 +32,12 @@ const Article=()=>{
     },[])
 
 
+    /*
+        google analytics tracker
+    */
+    useGaTracker()
+
+
     const createMarkup=()=> {
         return {__html: post?.content}
     }
@@ -44,11 +50,6 @@ const Article=()=>{
             <p>Working on it...</p>
         </div>
     }
-
-    /*
-        google analytics tracker
-    */
-    useGaTracker()
 
     return (
         <div className='article_wrapper'>

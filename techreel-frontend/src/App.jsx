@@ -10,8 +10,8 @@ import SecondaryLayout from './hocs/SecondaryLayout'
 import PrivacyPolicy from "./views/PrivacyPolicy"
 import TermsOfUse from "./views/TermsOfUse"
 import Tag from './views/Tag'
+import TagList from './views/TagList'
 import UseScrollTop from './hooks/useScrollTop'
-import {useEffect} from 'react'
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
             <Route element={<Search/>} path='search/'/>
             <Route element={<PrivacyPolicy/>} path='privacy-policy'/>
             <Route element={<TermsOfUse/>} path='terms-of-use'/>
+            <Route element={<TagList/>} path='sitemap/tags/'/>
             <Route element={<Tag/>} path='tag/:tag'/>
             <Route element={<Article/>} path=':article_slug'/>
             <Route element={<NotFound/>} path='*'/>
