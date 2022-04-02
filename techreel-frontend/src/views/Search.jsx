@@ -17,10 +17,12 @@ const Search=()=>{
     const [queriedPosts , setQueriedPosts] = useState([])
 
     const postRequest=async(api_url, setCallback)=>{
+        const controller = new AbortController()
         const config = {
             headers:{
                 "Content-type":"application/json"
-            }
+            },
+            signal:controller.signal
         }
         const body = JSON.stringify({search_term})
         try {
@@ -39,7 +41,10 @@ const Search=()=>{
         }
     }
     useEffect(()=>{
-        postRequest(`${API_URL}blog/search/`, setQueriedPosts)
+        const request = postRequest(`${API_URL}blog/search/`, setQueriedPosts)
+        return ()=>{
+            request.then(controller => controller.abort())
+        }
     },[search])
 
     if(searchNull && !isLoading){

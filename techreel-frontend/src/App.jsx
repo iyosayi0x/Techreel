@@ -11,7 +11,7 @@ import PrivacyPolicy from "./views/PrivacyPolicy"
 import TermsOfUse from "./views/TermsOfUse"
 import Tag from './views/Tag'
 import UseScrollTop from './hooks/useScrollTop'
-
+import {useEffect} from 'react'
 
 function App() {
   return (

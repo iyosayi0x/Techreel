@@ -14,10 +14,12 @@ const Tag=()=>{
     const [isLoading , setIsLoading] = useState(false)
 
     const postRequest=async(api_url, setCallback)=>{
+        const controller = new AbortController()
         const config = {
             headers:{
                 "Content-type":"application/json"
-            }
+            },
+            signal: controller.signal
         }
         const body = JSON.stringify({tag})
         try {
@@ -35,9 +37,13 @@ const Tag=()=>{
             setIsLoading(false)
             setTagEmpty(true)
         }
+        return controller
     }
     useEffect(()=>{
-        postRequest(`${API_URL}blog/tag/`, setQueriedPosts)
+        const request = postRequest(`${API_URL}blog/tag/`, setQueriedPosts)
+        return ()=>{
+            request.then(request.then(controller =>controller.abort()))
+        }
     },[tag])
 
     if(tagEmpty && !isLoading){

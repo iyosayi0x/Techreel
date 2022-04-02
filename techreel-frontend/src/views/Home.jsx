@@ -37,27 +37,31 @@ const Home=()=>{
         for popular and featured posts
     */
     const getRequest=async(api_url, setCallback , loadingState)=>{
+        const controller = new AbortController()
         try {
             setLoading(prevLoading =>({...prevLoading, [loadingState]:true}))
-            const res = await axios.get(api_url)
+            const res = await axios.get(api_url , {signal:controller.signal})
             const data = await res.data
             setCallback(data)
             setLoading(prevLoading => ({...prevLoading , [loadingState]:false }))
         }catch(err){}
+        return controller
     }
 
     /*
         Custom get request for blog Posts
     */
     const getBlogPosts=async()=>{
+        const controller = new AbortController()
         try {(
             setLoading(prevLoading => ({...prevLoading , 'blogPostLoading':true})))
-            const res = await axios.get(`${API_URL}blog`)
+            const res = await axios.get(`${API_URL}blog` , {signal:controller.signal})
             const data = await res.data
             setBlogPosts(data?.results)
             setBlogPostNextUrl(data?.next)
             setLoading(prevLoading => ({...prevLoading ,'blogPostLoading':false}))
         }catch(err){}
+        return controller
     }
 
     /*
@@ -79,10 +83,14 @@ const Home=()=>{
         make http requests
     */
     useEffect(()=>{
-        getRequest(`${API_URL}blog/featured/`, setFeaturedPosts , 'featuredPostLoading')
-        getRequest(`${API_URL}blog/popular/`, setPopularPosts , 'popularPostLoading')
-        getBlogPosts()
-        // document.title = "Latest updates in the world of tech - Techreel"
+        const getRqst = getRequest(`${API_URL}blog/featured/`, setFeaturedPosts , 'featuredPostLoading')
+        const getRqst2 = getRequest(`${API_URL}blog/popular/`, setPopularPosts , 'popularPostLoading')
+        const getBlgPst = getBlogPosts()
+        return ()=>{
+            getRqst.then(controller => controller.abort())
+            getRqst2.then(controller => controller.abort())
+            getBlgPst.then(controller => controller.abort())
+        }
     },[])
 
     return (
