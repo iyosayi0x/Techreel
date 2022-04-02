@@ -17,9 +17,10 @@ class TagChoices(models.TextChoices):
 
 
 class BlogPost (models.Model):
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(
+        Author, on_delete=models.SET_NULL, null=True, related_name='author')
     title = models.CharField(max_length=200)
-    views = models.IntegerField(default=0)
+    views = models.PositiveIntegerField(default=0)
     slug = models.SlugField()
     tags = ArrayField(models.CharField(
         max_length=30, choices=TagChoices.choices, default=TagChoices.TECH))
