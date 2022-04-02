@@ -18,10 +18,15 @@ const useGaTracker=()=>{
 
 export default useGaTracker
 
-export const useAnalyticsEventTracker = (category , action , label) => {
-    if(window.location.host==='techreel.co'){
-        ReactGA.event({category, action, label});
+export const useAnalyticsEventTracker = (category) => {
+        const eventTracker = (action,label='default') => {
+                if(window.location.host === 'techreel.co'){
+                    if(label){
+                        ReactGA.event({category, action, label});
+                    }else {
+                        ReactGA.event({category, action});
+                    }
+                }
+        }
         return eventTracker;
-    }
-    return {}
 }
