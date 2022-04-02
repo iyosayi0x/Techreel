@@ -58,8 +58,8 @@ const Article=()=>{
             </Helmet>
             <h1 className='article_title'>{post?.title}</h1>
             <div className='article_detail'>
-                <p className='article_author'>iyosayi</p>
-                <p className='article_date'>June first 2020</p>
+                <p className='article_author'>{post?.author}</p>
+                <p className='article_date'>{post?.date_created}</p>
             </div>
             <img className='article_thumbnail' src={post?.thumbnail} alt='Article Thumbnail'/>
             <section className='article_content' dangerouslySetInnerHTML={createMarkup()}/>
