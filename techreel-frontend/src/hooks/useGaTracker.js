@@ -1,16 +1,17 @@
 import {useEffect} from 'react-router-dom'
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 // Tracking id for google analytics
-const TRACKING_ID = ''
+const MEASUREMENT_ID = ''
 const useGaTracker=()=>{
     useEffect(() => {
         /*
             Initializing google analytics if href = techreel.co
         */
         if(window.location.host === 'techreel.co'){
-            ReactGA.initialize(TRACKING_ID);
-            ReactGA.pageview(window.location.pathname + window.location.search);
+            ReactGA.initialize(MEASUREMENT_ID);
+            const current_page=window.location.pathname + window.location.search
+            ReactGA.send({hitType:"pageview" , page:current_page})
         }
     }, []);
 }
