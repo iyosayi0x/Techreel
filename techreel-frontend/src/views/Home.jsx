@@ -102,7 +102,7 @@ const Home=()=>{
         <div className='home_wrapper'>
 
         <Helmet prioritizeSeoTags>
-            <title>Latest updated in the world of tech - Techreel</title>
+            <title>Latest updates in the world of tech - Techreel</title>
             <meta name='description' content='Get the latest updates in tech and best deals on new gadgets , laptop, phones , updates in the world of programming and lots more'/>
             <meta name='keywords' content='Tech , Technology , Programming , Phones , Laptops , Tv , Gadgets , Deals'/>
             <meta property="og:title" content='Latest updated in the world of tech - Techreel'/>
