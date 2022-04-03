@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import NotFound from './NotFound'
 import {Helmet} from 'react-helmet-async'
-import useGaTracker from '../hooks/useGaTracker'
+import {useGaTrackerConditional} from '../hooks/useGaTracker'
 
 const Article=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -11,6 +11,7 @@ const Article=()=>{
     const [post , setPost] = useState({})
     const [isLoading , setIsLoading]  = useState(false)
     const [error404 , setError404] = useState(false)
+    const track = useGaTrackerConditional()
     /*
         sends a get Request to the backend
         gets the post content
@@ -35,8 +36,11 @@ const Article=()=>{
     /*
         google analytics tracker
     */
-    useGaTracker()
-
+    useEffect(()=>{
+        if(isLoading === false && error404===false){
+            track()
+        }
+    },[isLoading, error404])
 
     const createMarkup=()=> {
         return {__html: post?.content}
