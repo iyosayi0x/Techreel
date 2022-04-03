@@ -12,6 +12,8 @@ class TagChoices(models.TextChoices):
     EARNING = 'earning'
     PROGRAMMING = 'programming'
     REVIEWS = 'reviews'
+    DEV = 'dev'
+    Gadgets = 'gadgets'
 
 # Create your models here.
 
