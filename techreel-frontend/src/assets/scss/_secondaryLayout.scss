@@ -13,6 +13,9 @@
 .secondarylayout_header {
     padding:0 2rem;
     display:none;
+    img {
+        width:5.2rem;
+    }
 }
 .secondarylayout .layout_menu{
     background:black;
@@ -33,5 +36,8 @@
 @media  screen and (max-width:700px){
     .secondarylayout_header{
         @include useFlexbox(space-between , center);
+    }
+    .secondarylayout .secondaryNav{
+        padding:.8rem 0;
     }
 }

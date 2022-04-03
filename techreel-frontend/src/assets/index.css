@@ -183,6 +183,7 @@ html {
 @media screen and (max-width: 1000px) {
   .layout .footer {
     display: block;
+    padding: 1.5rem;
   }
   .layout .nav_btn_primary {
     background: #0026ff;
@@ -399,6 +400,10 @@ html {
   display: none;
 }
 
+.secondarylayout_header img {
+  width: 5.2rem;
+}
+
 .secondarylayout .layout_menu {
   background: black;
 }
@@ -438,6 +443,9 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .secondarylayout .secondaryNav {
+    padding: .8rem 0;
   }
 }
 
