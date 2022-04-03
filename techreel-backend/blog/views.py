@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .models import BlogPost
-from .serializers import BlogPostSerializer
+from .serializers import BlogPostSerializer, SiteMapBlogListSerializer
 from django.db.models import Q
 from django.utils import timezone
 from .utils import BlogPostPagination
@@ -81,3 +81,8 @@ class BlogPostDetailView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except BlogPost.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+class BlogPostListSitemapView(ListAPIView):
+    queryset = BlogPost.objects.all().order_by('-date_created')
+    serializer_class = SiteMapBlogListSerializer
