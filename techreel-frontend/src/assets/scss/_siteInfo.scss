@@ -1,48 +1,123 @@
 /*
     For both about and sitemap page
 */
-.about , .sitemap {
-    padding:1rem 2rem;
+.about,
+.sitemap {
+    padding: 1rem 2rem;
 }
-.about_header , .sitemap_header {
+
+.about_header,
+.sitemap_header {
     @include useSecondaryFont;
-    font-weight:bolder;
-    margin:2rem 0;
-    padding-bottom:1.2rem;
-    font-size:2.5rem;
-    border-bottom:1px solid $secondary-color;
+    font-weight: bolder;
+    margin: 2rem 0;
+    padding-bottom: 1.2rem;
+    font-size: 2.5rem;
+    border-bottom: 1px solid $secondary-color;
 }
 
 /*
     For only about page
 */
 .about_section {
-    font-weight:500;
-    padding:0 2rem;
-    max-width:700px;
+    font-weight: 500;
+    padding: 0 2rem;
+    max-width: 700px;
+
     p {
-        margin:2rem auto;
-        font-size:1.2rem;
+        margin: 2rem auto;
+        font-size: 1.2rem;
     }
 }
+
 .about_socials {
-    border-top:1px solid $secondary-color;
-    padding-top:1rem;
+    border-top: 1px solid $secondary-color;
+    padding-top: 1rem;
+
     ul {
-        list-style:none;
+        list-style: none;
     }
+
     li {
-        margin:1rem auto;
+        margin: 1rem auto;
     }
+
     a {
-        text-decoration:none;
-        color:black;
-        font-size:1rem;
-        @include useFlexbox(flex-start ,center);
-        gap:.5rem;
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+        @include useFlexbox(flex-start, center);
+        gap: .5rem;
     }
 }
 
 /*
     For only the sitemap page
 */
+.sitemap .sitemap_link_shell {
+    margin: 1rem 0;
+    @include useSecondaryFont;
+}
+
+.sitemap .sitemap_link_shell a {
+    text-decoration: None;
+    color: black;
+    font-size: 1rem;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.sitemap .sitemap_page_name {
+    font-size: 1.3rem;
+    @include useSecondaryFont;
+    font-weight: bolder;
+    border-bottom: 1px solid $secondary-color;
+    padding: 1rem .2rem;
+}
+
+.sitemap .sitemap_container {
+    @include useFlexbox(space-between, flex-start);
+}
+
+.sitemap .sitemap_links_wrapper {
+    flex: .1;
+}
+
+.sitemap .sitemap_page_wrapper {
+    flex: .8;
+}
+
+.sitemap .sitemap_page_link_list {
+    list-style: none;
+    padding: .5rem;
+}
+
+.sitemap .sitemap_page_link_item {
+    margin: 1.5rem auto;
+}
+
+.sitemap .sitemap_page_link_item a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .sitemap .sitemap_container {
+        flex-direction: column;
+    }
+
+    .sitemap .sitemap_links_wrapper {
+        width: 100%;
+    }
+
+    .sitemap .sitemap_page_wrapper {
+        width: 100%;
+    }
+
+}

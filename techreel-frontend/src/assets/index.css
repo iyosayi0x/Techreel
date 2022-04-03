@@ -810,11 +810,13 @@ html {
 /*
     For both about and sitemap page
 */
-.about, .sitemap {
+.about,
+.sitemap {
   padding: 1rem 2rem;
 }
 
-.about_header, .sitemap_header {
+.about_header,
+.sitemap_header {
   font-family: "Roboto Slab", serif;
   font-weight: bolder;
   margin: 2rem 0;
@@ -869,6 +871,87 @@ html {
 /*
     For only the sitemap page
 */
+.sitemap .sitemap_link_shell {
+  margin: 1rem 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.sitemap .sitemap_link_shell a {
+  -webkit-text-decoration: None;
+          text-decoration: None;
+  color: black;
+  font-size: 1rem;
+}
+
+.sitemap .sitemap_link_shell a:hover {
+  color: #0026ff;
+}
+
+.sitemap .sitemap_page_name {
+  font-size: 1.3rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: bolder;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem .2rem;
+}
+
+.sitemap .sitemap_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.sitemap .sitemap_links_wrapper {
+  -webkit-box-flex: .1;
+      -ms-flex: .1;
+          flex: .1;
+}
+
+.sitemap .sitemap_page_wrapper {
+  -webkit-box-flex: .8;
+      -ms-flex: .8;
+          flex: .8;
+}
+
+.sitemap .sitemap_page_link_list {
+  list-style: none;
+  padding: .5rem;
+}
+
+.sitemap .sitemap_page_link_item {
+  margin: 1.5rem auto;
+}
+
+.sitemap .sitemap_page_link_item a {
+  text-decoration: none;
+  color: black;
+}
+
+.sitemap .sitemap_page_link_item a:hover {
+  color: #0026ff;
+}
+
+@media screen and (max-width: 1000px) {
+  .sitemap .sitemap_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .sitemap .sitemap_links_wrapper {
+    width: 100%;
+  }
+  .sitemap .sitemap_page_wrapper {
+    width: 100%;
+  }
+}
+
 .search_items_wrapper {
   display: -ms-grid;
   display: grid;
