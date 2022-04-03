@@ -11,6 +11,7 @@ import PrivacyPolicy from "./views/PrivacyPolicy"
 import TermsOfUse from "./views/TermsOfUse"
 import Tag from './views/Tag'
 import TagList from './views/TagList'
+import ArticleList from './views/ArticleList'
 import UseScrollTop from './hooks/useScrollTop'
 
 function App() {
@@ -22,12 +23,14 @@ function App() {
             <Route index element={<Home/>}/>
           </Route>
           <Route element={<SecondaryLayout/>} path='/'>
-            <Route element={<Sitemap/>} path='sitemap/'/>
+            <Route element={<Sitemap/>} path='sitemap/'>
+              <Route element={<TagList/>} path='tags/'/>
+              <Route element={<ArticleList/>} path='articles/'/>
+            </Route>
             <Route element={<About/>} path='about/'/>
             <Route element={<Search/>} path='search/'/>
             <Route element={<PrivacyPolicy/>} path='privacy-policy'/>
             <Route element={<TermsOfUse/>} path='terms-of-use'/>
-            <Route element={<TagList/>} path='sitemap/tags/'/>
             <Route element={<Tag/>} path='tag/:tag'/>
             <Route element={<Article/>} path=':article_slug'/>
             <Route element={<NotFound/>} path='*'/>
