@@ -166,7 +166,9 @@ html {
   font-family: 'Poppins', sans-serif;
   width: 90%;
   border-radius: .2rem 0 0 .2rem;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .layout .searchbar input:focus {
@@ -178,6 +180,7 @@ html {
   color: white;
   border-radius: 0 .2rem .2rem 0;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 1000px) {
@@ -187,6 +190,9 @@ html {
   }
   .layout .nav_btn_primary {
     background: #0026ff;
+  }
+  .layout .searchbar form {
+    width: 90%;
   }
 }
 
@@ -336,8 +342,8 @@ html {
     left: 0;
     top: 0;
     bottom: 0;
+    right: 0;
     background: white;
-    width: 100%;
     z-index: 300;
     padding: 1.6rem;
   }
@@ -799,7 +805,7 @@ html {
     text-align: center;
   }
   .notfound_infowrapper h1 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     text-align: center;
     margin: .4rem auto;
   }
@@ -808,10 +814,13 @@ html {
     margin: .6rem auto;
   }
   .notfound_image {
-    width: 70%;
+    width: 90%;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+  .notfound_linkwrapper {
+    font-size: 1rem;
   }
 }
 
@@ -972,6 +981,7 @@ html {
 @media screen and (max-width: 700px) {
   .search_items_wrapper {
     display: block;
+    padding: 1.3rem;
   }
 }
 
@@ -987,12 +997,13 @@ html {
 @media screen and (max-width: 700px) {
   .tag_items_wrapper {
     display: block;
+    padding: 1.3rem;
   }
 }
 
 .tag h1 {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: .5rem;
   font-size: 2.4rem;
   font-family: "Roboto Slab", serif;
 }
@@ -1181,7 +1192,7 @@ html {
 .news_letter_form_wrapper form {
   background: white;
   min-height: 350px;
-  width: 80%;
+  width: 85%;
   max-width: 450px;
   padding: 1rem;
   border-radius: .4rem;

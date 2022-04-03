@@ -84,11 +84,10 @@
         left:0;
         top:0;
         bottom:0;
+        right:0;
         background:white;
-        width:100%;
         z-index:300;
         padding:1.6rem;
-        // overflow-y:scroll;
     }
     .layout .nav ul {
         flex-direction: column;

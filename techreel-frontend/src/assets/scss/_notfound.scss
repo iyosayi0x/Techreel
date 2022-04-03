@@ -45,7 +45,7 @@
         transform:None;
         text-align:center;
         h1 {
-            font-size:1.3rem;
+            font-size:1.6rem;
             text-align:center;
             margin:.4rem auto;
         }
@@ -55,8 +55,11 @@
         }
     }
     .notfound_image{
-        width:70%;
+        width:90%;
         left:50%;
-        transform:translateX(-50%)
+        transform:translateX(-50%);
+    }
+    .notfound_linkwrapper{
+        font-size:1rem;
     }
 }

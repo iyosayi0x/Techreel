@@ -113,7 +113,9 @@
         font-family: 'Poppins', sans-serif;
         width:90%;
         border-radius:.2rem 0 0 .2rem;
-        border:1px solid black;
+        border-top:1px solid black;
+        border-left:1px solid black;
+        border-bottom:1px solid black;
         &:focus {
             border:1px solid $primary-color;
         }
@@ -123,6 +125,7 @@
         color:white;
         border-radius:0 .2rem .2rem 0;
         cursor:pointer;
+        font-weight: bolder;
     }
 }
 @media screen and (max-width:1000px){
@@ -132,5 +135,8 @@
     }
     .layout .nav_btn_primary{
         background:$primary-color;
+    }
+    .layout .searchbar form {
+        width:90%;
     }
 }
