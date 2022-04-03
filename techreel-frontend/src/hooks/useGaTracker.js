@@ -30,3 +30,16 @@ export const useAnalyticsEventTracker = (category) => {
         }
         return eventTracker;
 }
+
+
+
+export const useGaTrackerConditional=()=>{
+    const pageTracker=()=>{
+        if(window.location.host === 'techreel.co'){
+            ReactGA.initialize(MEASUREMENT_ID);
+            const current_page=window.location.pathname + window.location.search
+            ReactGA.send({hitType:"pageview" , page:current_page})
+        }
+    }
+    return pageTracker
+}
