@@ -3,20 +3,18 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .models import BlogPost
-from .serializers import BlogPostSerializer, SiteMapBlogListSerializer
+from .serializers import BlogPostSerializer, SiteMapBlogListSerializer , BlogPostSerializer_List
 from django.db.models import Q
 from django.utils import timezone
 from .utils import BlogPostPagination
 
-# works
 
 
 class BlogPostFeaturedView(ListAPIView):
     queryset = BlogPost.objects.all().filter(
         featured=True).order_by('-date_created')
-    serializer_class = BlogPostSerializer
+    serializer_class = BlogPostSerializer_List
 
-# works
 
 
 class BlogPostListView(ListAPIView):
@@ -25,7 +23,6 @@ class BlogPostListView(ListAPIView):
         featured=False).order_by('-date_created')
     serializer_class = BlogPostSerializer
 
-# works
 
 
 class BlogPostSearchView(APIView):
@@ -45,7 +42,6 @@ class BlogPostSearchView(APIView):
         serializer = BlogPostSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-# works
 
 
 class BlogPostTagFilterView(APIView):
@@ -59,7 +55,6 @@ class BlogPostTagFilterView(APIView):
         serializer = BlogPostSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-# works
 
 
 class BlogPostListPopularView(ListAPIView):
@@ -68,7 +63,6 @@ class BlogPostListPopularView(ListAPIView):
         timezone.now() - timezone.timedelta(7), timezone.now()]).order_by('-views')[:3]
     serializer_class = BlogPostSerializer
 
-# works
 
 
 class BlogPostDetailView(APIView):
@@ -86,3 +80,20 @@ class BlogPostDetailView(APIView):
 class BlogPostListSitemapView(ListAPIView):
     queryset = BlogPost.objects.all().order_by('-date_created')
     serializer_class = SiteMapBlogListSerializer
+
+
+class BlogPostSimilarView(APIView):
+    def post(self, request):
+        data = request.data
+        tags = data.get('tags', None)
+
+        if tags is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        lookup = Q()
+        # loop over tags
+        for tag in tags:
+            lookup |= Q(tags__icontains=tag)
+
+        queryset = BlogPost.objects.filter(lookup).order_by('-views')[:3]
+        serializer = BlogPostSerializer_List(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
