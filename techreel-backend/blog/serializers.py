@@ -1,24 +1,22 @@
 from rest_framework import serializers
 from .models import BlogPost
+from authors.serializers import AuthorSerializer
 
 
 class BlogPostSerializer(serializers.ModelSerializer):
-    author = serializers.CharField(max_length=200)
+    author = AuthorSerializer()
     date_created = serializers.DateTimeField(format='%b %d %Y')
 
     class Meta:
         model = BlogPost
         fields = ('author', 'id', 'title', 'slug', 'tags', 'thumbnail',
-                  'exert', 'content', 'featured', 'date_created',)
+                  'exert', 'content', 'date_created',)
 
 
 class BlogPostSerializer_List(serializers.ModelSerializer):
-    author = serializers.CharField(max_length=200)
-
     class Meta:
         model = BlogPost
-        fields = ('author', 'id', 'title', 'slug',
-                  'tags', 'thumbnail', 'exert',)
+        fields = ('id', 'title', 'slug', 'tags', 'thumbnail', 'exert',)
 
 
 class SiteMapBlogListSerializer(serializers.ModelSerializer):
