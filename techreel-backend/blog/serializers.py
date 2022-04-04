@@ -9,8 +9,12 @@ class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
         fields = ('author', 'id', 'title', 'slug', 'tags', 'thumbnail',
-                  'exert', 'content', 'featured', 'date_created',)
+                  'exert', 'content', 'date_created',)
 
+class BlogPostSerializer_List(serializers.ModelSerializer):
+    class Meta:
+        model = BlogPost
+        fields = ('id', 'title', 'slug', 'tags', 'thumbnail', 'exert',)
 
 class SiteMapBlogListSerializer(serializers.ModelSerializer):
     class Meta:
