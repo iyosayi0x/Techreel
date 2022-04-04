@@ -725,6 +725,51 @@ html {
   width: 95%;
 }
 
+.article_home_link_container {
+  padding: .8rem;
+}
+
+.article_home_link_container a {
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.02rem;
+}
+
+.article_home_link_container a:hover {
+  color: #0026ff;
+}
+
+.article_similarPosts_header {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  font-family: "Roboto Slab", serif;
+}
+
+.article_similarPosts_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .article_similarPosts_grid {
+    display: block;
+    padding: 1.3rem;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .article_wrapper {
     min-width: 100%;

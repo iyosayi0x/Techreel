@@ -29,6 +29,26 @@
 .article_content{
     width:95%;
 }
+.article_home_link_container {
+    padding:.8rem;
+}
+.article_home_link_container a{
+    text-decoration: none;
+    color:black;
+    @include useFlexbox(flex-end, center);
+    font-size:1.02rem;
+    &:hover {
+        color:$primary-color;
+    }
+}
+.article_similarPosts_header {
+    font-size:1.6rem;
+    font-weight: bolder;
+    @include useSecondaryFont;
+}
+.article_similarPosts_grid{
+    @include useGrid(1fr 1fr);
+}
 @media screen and (max-width:1000px){
     .article_wrapper {
         min-width:100%;
