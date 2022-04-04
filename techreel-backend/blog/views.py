@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .models import BlogPost
-from .serializers import BlogPostSerializer, SiteMapBlogListSerializer
+from .serializers import BlogPostSerializer, SiteMapBlogListSerializer, BlogPostSerializer_List
 from django.db.models import Q
 from django.utils import timezone
 from .utils import BlogPostPagination
@@ -23,7 +23,7 @@ class BlogPostListView(ListAPIView):
     pagination_class = BlogPostPagination
     queryset = BlogPost.objects.all().filter(
         featured=False).order_by('-date_created')
-    serializer_class = BlogPostSerializer
+    serializer_class = BlogPostSerializer_List
 
 # works
 
@@ -84,5 +84,22 @@ class BlogPostDetailView(APIView):
 
 
 class BlogPostListSitemapView(ListAPIView):
-    queryset = BlogPost.objects.all().order_by('-date_created')
+    queryset = BlogPost.objects.all().order_by('-title')
     serializer_class = SiteMapBlogListSerializer
+
+
+class BlogPostSimilarView(APIView):
+    def post(self, request):
+        data = request.data
+        tags = data.get('tags', None)
+
+        if tags is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        lookup = Q()
+        # loop over tags
+        for tag in tags:
+            lookup |= Q(tags__icontains=tag)
+
+        queryset = BlogPost.objects.filter(lookup).order_by('-views')[:3]
+        serializer = BlogPostSerializer_List(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

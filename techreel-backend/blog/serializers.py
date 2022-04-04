@@ -12,6 +12,15 @@ class BlogPostSerializer(serializers.ModelSerializer):
                   'exert', 'content', 'featured', 'date_created',)
 
 
+class BlogPostSerializer_List(serializers.ModelSerializer):
+    author = serializers.CharField(max_length=200)
+
+    class Meta:
+        model = BlogPost
+        fields = ('author', 'id', 'title', 'slug',
+                  'tags', 'thumbnail', 'exert',)
+
+
 class SiteMapBlogListSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
