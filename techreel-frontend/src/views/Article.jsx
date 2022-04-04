@@ -18,7 +18,7 @@ const Article=()=>{
     /*
         for similar posts
     */
-    const [similarPostsLoading, setSimilarPostsLoading]=useState(false)
+    const [similarPostsLoading, setSimilarPostsLoading]=useState(true)
     const [similarPosts , setSimilarPosts]= useState([])
 
 
