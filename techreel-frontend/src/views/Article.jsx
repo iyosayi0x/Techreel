@@ -56,7 +56,6 @@ const Article=()=>{
             const data = await res.data
             setCallback(data)
             setIsLoading(false)
-
             // start getReqeust for similar post
             getSimilarPost(data.tags)
 
@@ -125,7 +124,7 @@ const Article=()=>{
 
             <h1 className='article_title'>{post?.title}</h1>
             <div className='article_detail'>
-                <p className='article_author'>{post?.author}</p>
+                <p className='article_author'>{post?.author?.name}</p>
                 <p className='article_date'>{post?.date_created}</p>
             </div>
             <img className='article_thumbnail' src={post?.thumbnail} alt='Article Thumbnail'/>
