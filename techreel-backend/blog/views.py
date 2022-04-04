@@ -84,7 +84,7 @@ class BlogPostDetailView(APIView):
 
 
 class BlogPostListSitemapView(ListAPIView):
-    queryset = BlogPost.objects.all().order_by('-title')
+    queryset = BlogPost.objects.all().order_by('title')
     serializer_class = SiteMapBlogListSerializer
 
 
