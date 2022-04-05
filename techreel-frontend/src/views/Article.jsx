@@ -55,8 +55,8 @@ const Article=()=>{
             const res = await axios.get(api_url , {signal:controller.signal})
             const data = await res.data
             setCallback(data)
-            track(`${window.location.pathname}/${data.slug}`)
             setIsLoading(false)
+            track(`${window.location.pathname}/${data.slug}`)
             // start getReqeust for similar post
             getSimilarPost(data.tags)
             return controller
