@@ -14,7 +14,7 @@ const Article=()=>{
     const [post , setPost] = useState({})
     const [isLoading , setIsLoading]  = useState(false)
     const [error404 , setError404] = useState(false)
-
+    const track = useGaTrackerConditional()
     /*
         for similar posts
     */
@@ -55,6 +55,7 @@ const Article=()=>{
             const res = await axios.get(api_url , {signal:controller.signal})
             const data = await res.data
             setCallback(data)
+            track(`${window.location.pathname}/${data.slug}`)
             setIsLoading(false)
             // start getReqeust for similar post
             getSimilarPost(data.tags)
@@ -83,12 +84,11 @@ const Article=()=>{
     /*
         google analytics tracker
     */
-    const track = useGaTrackerConditional()
-    useEffect(()=>{
-        if(isLoading === false && error404===false){
-            track()
-        }
-    },[isLoading, error404])
+    // useEffect(()=>{
+    //     if(isLoading === false && error404===false){
+    //         track()
+    //     }
+    // },[isLoading, error404])
 
     /*
         setsInnerHtml of container with martkup

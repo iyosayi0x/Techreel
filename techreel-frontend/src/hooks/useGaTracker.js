@@ -34,11 +34,10 @@ export const useAnalyticsEventTracker = (category) => {
 
 
 export const useGaTrackerConditional=()=>{
-    const pageTracker=()=>{
+    const pageTracker=(current_path)=>{
         if(window.location.host === 'techreel.co'){
             ReactGA.initialize(MEASUREMENT_ID);
-            const current_page=window.location.pathname + window.location.search
-            ReactGA.send({hitType:"pageview" , page:current_page})
+            ReactGA.send({hitType:"pageview" , page:current_path})
         }
     }
     return pageTracker
