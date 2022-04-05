@@ -3,11 +3,10 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .models import BlogPost
-from .serializers import BlogPostSerializer, SiteMapBlogListSerializer , BlogPostSerializer_List
+from .serializers import BlogPostSerializer, SiteMapBlogListSerializer, BlogPostSerializer_List
 from django.db.models import Q
 from django.utils import timezone
 from .utils import BlogPostPagination
-
 
 
 class BlogPostFeaturedView(ListAPIView):
@@ -16,13 +15,11 @@ class BlogPostFeaturedView(ListAPIView):
     serializer_class = BlogPostSerializer_List
 
 
-
 class BlogPostListView(ListAPIView):
     pagination_class = BlogPostPagination
     queryset = BlogPost.objects.all().filter(
         featured=False).order_by('-date_created')
     serializer_class = BlogPostSerializer
-
 
 
 class BlogPostSearchView(APIView):
@@ -43,7 +40,6 @@ class BlogPostSearchView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 class BlogPostTagFilterView(APIView):
     def post(self, request):
         data = request.data
@@ -56,13 +52,11 @@ class BlogPostTagFilterView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 class BlogPostListPopularView(ListAPIView):
     # we only want the post within the last 7 days
     queryset = BlogPost.objects.all().filter(date_created__range=[
         timezone.now() - timezone.timedelta(7), timezone.now()]).order_by('-views')[:3]
     serializer_class = BlogPostSerializer
-
 
 
 class BlogPostDetailView(APIView):
@@ -78,7 +72,7 @@ class BlogPostDetailView(APIView):
 
 
 class BlogPostListSitemapView(ListAPIView):
-    queryset = BlogPost.objects.all().order_by('-date_created')
+    queryset = BlogPost.objects.all().order_by('title')
     serializer_class = SiteMapBlogListSerializer
 
 
