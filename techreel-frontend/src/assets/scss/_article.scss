@@ -31,18 +31,21 @@
 }
 .article_home_link_container {
     padding:.8rem;
+    text-align:left;
 }
 .article_home_link_container a{
     text-decoration: none;
     color:black;
-    @include useFlexbox(flex-end, center);
+    @include useFlexbox(center, center);
     font-size:1.02rem;
     &:hover {
         color:$primary-color;
     }
+    width: fit-content;
+    @include transformTranslatePos(90% , 0 , relative);
 }
 .article_similarPosts_header {
-    font-size:1.6rem;
+    font-size:1.7rem;
     font-weight: bolder;
     @include useSecondaryFont;
 }
