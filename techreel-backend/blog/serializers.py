@@ -1,9 +1,9 @@
 from rest_framework import serializers
 from .models import BlogPost
-
+from authors.serializers import AuthorSerializer
 
 class BlogPostSerializer(serializers.ModelSerializer):
-    author = serializers.CharField(max_length=200)
+    author = AuthorSerializer()
     date_created = serializers.DateTimeField(format='%b %d %Y')
 
     class Meta:
