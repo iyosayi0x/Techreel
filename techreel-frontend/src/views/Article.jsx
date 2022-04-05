@@ -58,12 +58,15 @@ const Article=()=>{
             setIsLoading(false)
             // start getReqeust for similar post
             getSimilarPost(data.tags)
+            return controller
 
         }catch(err){
             setError404(true)
-        }finally{
-            return controller
         }
+        finally {
+            controller.abort()
+        }
+        return controller
     }
 
     /*
@@ -72,7 +75,7 @@ const Article=()=>{
     useEffect(()=>{
         const gtRqst = getRequest(`${API_URL}blog/${article_slug}/`, setPost)
         return ()=>{
-            gtRqst.then(controller => controller.abort())
+            gtRqst.then(controller =>controller.abort())
         }
     },[])
 
@@ -113,14 +116,19 @@ const Article=()=>{
     return (
         <div className='article_wrapper'>
 
-            <Helmet>
-                <title>{`${post?.title}`} - Techreel</title>
-                <meta name='description' content={`${post?.exert}`}/>
-                <meta property="og:title" content={`${post?.title}`}/>
-                <meta property="og:description" content={`${post?.exert}`}/>
-                <meta property="og:image" content={`${post?.thumbnail}`}/>
-                <meta property="og:type" content="article" />
-            </Helmet>
+            {
+                !isLoading &&  <Helmet>
+                    <title>{`${post?.title}`} - Techreel</title>
+                    <meta name='description' content={`${post?.exert}`}/>
+                    <meta property="og:title" content={`${post?.title}`}/>
+                    <meta property="og:description" content={`${post?.exert}`}/>
+                    <meta property="og:image" content={`${post?.thumbnail}`}/>
+                    <meta property="og:type" content="article" />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content="@techreel_co" />
+                    <meta name="twitter:creator" content={`${post?.author?.twitter_handle || '@iyosayi18'}`} />
+                </Helmet>
+            }
 
             <h1 className='article_title'>{post?.title}</h1>
             <div className='article_detail'>
@@ -132,7 +140,7 @@ const Article=()=>{
 
             <div className='article_footer'>
                 <p className='article_home_link_container'>
-                    <Link to='/'>Back to posts <ArrowLeft/></Link>
+                    <Link to='/'>Back to home <ArrowLeft/></Link>
                 </p>
                 <div className='article_similarPosts'>
                         <p className='article_similarPosts_header'>Similar posts</p>
