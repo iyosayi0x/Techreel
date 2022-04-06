@@ -78,7 +78,7 @@ const Article=()=>{
         return ()=>{
             gtRqst.then(controller =>controller.abort())
         }
-    },[])
+    },[article_slug])
 
 
     /*

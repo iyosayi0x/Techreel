@@ -5,7 +5,7 @@ import axios from 'axios'
 import BlogPostCardSkel , {TextSkel} from '../components/BlogPostCardSkel'
 import EmptyState from '../components/EmptyState'
 import {Helmet} from 'react-helmet-async'
-import useGaTracker from '../hooks/useGaTracker'
+import useGaTracker , {useGaTrackerConditional} from '../hooks/useGaTracker'
 
 const Tag=()=>{
     const API_URL = import.meta.env.VITE_API_URL
@@ -13,6 +13,7 @@ const Tag=()=>{
     const [queriedPosts , setQueriedPosts] = useState([])
     const [tagEmpty , setTagEmpty] = useState(false)
     const [isLoading , setIsLoading] = useState(false)
+    const track = useGaTrackerConditional()
 
     const postRequest=async(api_url, setCallback)=>{
         const controller = new AbortController()
@@ -43,6 +44,7 @@ const Tag=()=>{
         return controller
     }
     useEffect(()=>{
+	track(window.location.pathname + window.location.search)
         const request = postRequest(`${API_URL}blog/tag/`, setQueriedPosts)
         return ()=>{
             request.then(request.then(controller =>controller.abort()))
@@ -52,7 +54,6 @@ const Tag=()=>{
     /*
         google analytics tracker
     */
-    useGaTracker()
 
     if(tagEmpty && !isLoading){
         return <EmptyState parent_class='tag'/>
