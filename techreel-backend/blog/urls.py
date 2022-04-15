@@ -16,5 +16,5 @@ urlpatterns = [
     path('sitemap/blogposts/', BlogPostListSitemapView.as_view(),
          name='blogpost_sitemap_list'),
     path('similar/', BlogPostSimilarView.as_view(), name='blogpost_similar'),
-    path('<str:slug>/', BlogPostDetailView.as_view(), name='blogpost_detail'),
+    path('post/<str:slug>/', BlogPostDetailView.as_view(), name='blogpost_detail'),
 ]
