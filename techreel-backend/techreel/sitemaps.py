@@ -12,8 +12,6 @@ class Site:
 
 
 class BlogPostSitemap(Sitemap):
-    changefreq = 'weekly'
-
     def get_urls(self, site=None, **kwargs):
         site = Site()
         return super(BlogPostSitemap, self).get_urls(site=site, **kwargs)
