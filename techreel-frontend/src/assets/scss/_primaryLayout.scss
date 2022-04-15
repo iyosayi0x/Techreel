@@ -85,9 +85,11 @@
         top:0;
         bottom:0;
         right:0;
+        width:100%;
         background:white;
         z-index:300;
         padding:1.6rem;
+        overflow-y:auto;
     }
     .layout .nav ul {
         flex-direction: column;

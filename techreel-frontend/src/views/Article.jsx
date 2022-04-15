@@ -22,7 +22,7 @@ const Article=()=>{
     const [similarPosts , setSimilarPosts]= useState([])
 
 
-    const getSimilarPost=async(tags)=>{
+    const getSimilarPost=async(tags , slug)=>{
         const controller = new AbortController()
         const Config ={
             headers:{
@@ -30,7 +30,7 @@ const Article=()=>{
             },
             signal:controller.signal
         }
-        const body= JSON.stringify({tags})
+        const body= JSON.stringify({tags , slug})
         try {
             setSimilarPostsLoading(true)
             const res = await axios.post(`${API_URL}blog/similar/` , body , Config)
@@ -58,7 +58,7 @@ const Article=()=>{
             setIsLoading(false)
             track(`${window.location.pathname}/${data.slug}`)
             // start getReqeust for similar post
-            getSimilarPost(data.tags)
+            getSimilarPost(data.tags , data.slug)
             return controller
 
         }catch(err){
@@ -74,7 +74,7 @@ const Article=()=>{
         sends get request on initial render
     */
     useEffect(()=>{
-        const gtRqst = getRequest(`${API_URL}blog/${article_slug}/`, setPost)
+        const gtRqst = getRequest(`${API_URL}blog/post/${article_slug}/`, setPost)
         return ()=>{
             gtRqst.then(controller =>controller.abort())
         }
