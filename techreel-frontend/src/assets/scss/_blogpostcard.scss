@@ -1,0 +1,43 @@
+.blogpostcard {
+    position:relative;
+    &:hover {
+        img {
+            filter:brightness(85%);
+        }
+    }
+}
+.blogpostcard .blogpostcard_thumbnail{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:.2rem;
+    transition:.4s;
+}
+.blogpostcard .blogpostcard_link {
+    text-decoration: none;
+    color:black;
+}
+.blogpostcard .blogpostcard_tags_containter{
+    @include useFlexbox(flex-start ,center);
+    gap:1.2rem;
+    padding:.8rem 0;
+}
+.blogpostcard .blogpostcard_title {
+    font-size:1.2rem;
+    max-width:90%;
+    font-family: 'Roboto Slab', serif;
+}
+.blogpostcard .blogpostcard_tag {
+    background:$secondary-color;
+    padding:.3rem .9rem;
+    border-radius:.8rem;
+    font-size:.8rem;
+    font-weight:bolder;
+    color:$primary-color;
+}
+
+@media screen and (max-width:1000px){
+    .blogpostcard {
+        margin:2.5rem auto;
+    }
+}

@@ -1,0 +1,103 @@
+.news_letter {
+    font-family: 'Poppins', sans-serif;
+    z-index:400;
+}
+.news_letter_form_overlay{
+    position:fixed;
+    background:rgba(black,.4);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.news_letter_form_wrapper form {
+    background:white;
+    min-height:350px;
+    width:85%;
+    max-width:450px;
+    padding:1rem;
+    border-radius:.4rem;
+    @include transformTranslatePos(50% , 40% , fixed);
+}
+.news_letter_description {
+    font-size:.85rem;
+    width:80%;
+    text-align: center;
+    margin:0 auto;
+}
+.news_letter_bold_text {
+    font-weight: bolder;
+    text-align:center;
+    font-size:2rem;
+    margin:1.5rem 0 1rem 0;
+    @include useSecondaryFont;
+}
+.news_letter_form_field {
+    margin:1rem auto;
+    width:85%;
+    z-index:500;
+}
+
+.news_letter_form_field input {
+    border:none;
+    background:$secondary-color;
+    padding:.7rem 1rem;
+    border-radius:.1rem;
+    width:100%;
+    outline:none;
+    font-family:'Poppins' , sans-serif;
+    transition:.3s;
+    &:focus {
+        border:1px solid $primary-color;;
+    }
+}
+.news_letter_form_field input[type=submit]{
+    cursor:pointer;
+    margin:1rem auto;
+    background:$primary-color;
+    color:white;
+    font-weight:bolder;
+}
+.news_letter_form_field label {
+    font-size:.9rem;
+    font-weight:bolder;
+}
+.news_letter_loading_btn {
+    border:none;
+    background:rgba($primary-color , .7);
+    padding:.7rem 1rem;
+    border-radius:.1rem;
+    width:100%;
+    outline:none;
+    font-family:'Poppins' , sans-serif;
+    transition:.3s;
+    color:white;
+    font-weight: bolder;
+    margin:1rem auto;
+}
+.message_success {
+    background:#5ffe5f;
+    color:black;
+}
+.message_error {
+    background:#f12b2b;
+    color:white;
+}
+.news_letter_message {
+    font-size:.85rem;
+    padding:.7rem .7rem;
+    text-align:center;
+    border-radius:.1rem;
+    margin:.6rem auto;
+    user-select: none;
+}
+.news_letter_footer {
+    font-size:.85rem;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    a {
+        text-decoration: none;
+        color:$primary-color;
+    }
+}

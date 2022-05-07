@@ -1,0 +1,43 @@
+.secondarylayout .nav_listitem{
+    & > a {
+        color:black;
+    }
+    & > a:active {
+        color:red;
+    }
+}
+.secondarylayout .secondaryNav {
+    padding:2rem 0;
+    border-bottom:1px solid $secondary-color;
+}
+.secondarylayout_header {
+    padding:0 2rem;
+    display:none;
+    img {
+        width:5.2rem;
+    }
+}
+.secondarylayout .layout_menu{
+    background:black;
+}
+.secondarylayout .icon_wrapper{
+    background:black;
+    color:white;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+    @include useFlexbox(center , center);
+    cursor:pointer;
+}
+.secondarylayout .nav {
+    justify-content:flex-start;
+}
+
+@media  screen and (max-width:700px){
+    .secondarylayout_header{
+        @include useFlexbox(space-between , center);
+    }
+    .secondarylayout .secondaryNav{
+        padding:.8rem 0;
+    }
+}

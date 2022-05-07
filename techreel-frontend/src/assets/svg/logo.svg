@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="50" height="50" version="1.1" viewBox="0 0 13.229 13.229" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+    <linearGradient id="linearGradient6474" x1="5.1982" x2="27.205" y1="44.809" y2="55.812" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient6472"/>
+    <linearGradient id="linearGradient6472">
+    <stop stop-color="#00f" offset="0"/>
+    <stop stop-color="#005" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient5404" x1="49.212" x2="37.267" y1="77.819" y2="101.56" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient6472"/>
+    <linearGradient id="linearGradient5986" x1="126.59" x2="191.72" y1="62.205" y2="62.205" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient6472"/>
+    </defs>
+    <g transform="matrix(.096432 0 0 .096432 .57373 .32574)">
+    <g fill-rule="evenodd">
+    <rect x="27.205" y="55.812" width="22.007" height="22.007" fill="#00f"/>
+    <path d="m27.205 33.805v22.007l22.007-22.007z" fill="#00a"/>
+    <rect x="5.1982" y="33.805" width="22.007" height="22.007" fill="url(#linearGradient6474)"/>
+    <path d="m27.205 77.819v22.007l22.007-22.007z" fill="url(#linearGradient5404)"/>
+    </g>
+    <g fill="#00f">
+    <path d="m49.212 33.805v22.007h22.007z" fill-rule="evenodd"/>
+    <path d="m49.212 33.805v22.007h22.007z" fill-rule="evenodd"/>
+    <g transform="matrix(.88823 0 0 .88823 -51.134 11.563)">
+        <path d="m191.72 86.296c-0.92447 0.13-1.8829 0.20295-2.87 0.20295h-35.055c-4.3798 0-8.2282-1.3716-10.773-3.2975-0.65846-0.49825-1.2212-1.017-1.6998-1.5517-1.373 1.5328-2.0222 3.2008-2.0222 4.924 0 2.3234 1.1769 4.5472 3.722 6.4731 0.29204 0.22099 0.60124 0.43467 0.92643 0.63982 2.5089 1.5828 5.9697 2.6577 9.847 2.6577h35.055zm-2.87 10.048c0.11391 0 0.22606-4e-3 0.3392-6e-3l-0.0172-5e-3zm0-48.663c0-5.8165-3.1531-10.939-7.6274-14.325-4.4743-3.3856-10.333-5.2912-16.711-5.2912h-35.055c-0.96977 0-1.9273 0.04502-2.87 0.13165l2.548 9.7253c0.10828-0.0018 0.21307-0.01154 0.32205-0.01154h35.055c4.3798 0 8.2282 1.3716 10.773 3.2975 2.5451 1.9258 3.722 4.1497 3.722 6.4731s-1.1769 4.5469-3.722 6.4728c-2.5451 1.9258-6.5535 3.3393-10.773 3.2975h-4.6619c-0.16071-0.0036-0.32207-0.0083-0.48529-0.01772l-5.6826-0.02251c-6.3669-0.36731-12.124 1.6068-16.598 4.9924-4.4743 3.3856-7.6274 8.5083-7.6274 14.325v9.8451c0-5.8165 3.1531-10.939 7.6274-14.325 4.4743-3.3856 10.333-5.2912 16.711-5.2912l2.3173 0.20768c0.94276 0.08663 1.9003 0.13136 2.87 0.13136h5.5295c6.3775 0 12.236-1.9056 16.711-5.2912 4.4743-3.3856 7.6274-8.508 7.6274-14.324z" color="#000000" fill="url(#linearGradient5986)" fill-rule="evenodd"/>
+    </g>
+    </g>
+    </g>
+</svg>

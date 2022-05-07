@@ -1,0 +1,65 @@
+.notfound {
+    padding:1rem;
+    position:relative;
+    z-index:10;
+}
+.notfound_image {
+    max-width:100%;
+    position:relative;
+    left:90%;
+    transform:translateX(-90%)
+}
+.notfound_infowrapper {
+    @include transformTranslateYpos(40% , absolute);
+    left:2rem;
+    z-index:300;
+    h1 {
+        font-size:2.4rem;
+        margin:1.8rem 0;
+        font-weight: bolder;
+    }
+    p {
+        width:70%;
+    }
+}
+.notfound_linkwrapper {
+    text-align:center;
+    font-size:1.2rem;
+    a {
+    text-decoration: none;
+    color:black;
+    font-weight:bolder;
+    padding:.6rem .9rem;
+    border-radius:.2rem;
+    transition: .4s;
+    @include useFlexbox(center , center);
+    }
+}
+
+@media screen and (max-width:1000px){
+    .notfound_infowrapper{
+        position: relative;
+        left:0;
+        width:fit-content;
+        margin: 0 auto;
+        transform:None;
+        text-align:center;
+        h1 {
+            font-size:1.6rem;
+            text-align:center;
+            margin:.4rem auto;
+        }
+        p {
+            font-size:.8rem;
+            margin:.6rem auto;
+        }
+    }
+    .notfound_image{
+        width:90%;
+        left:50%;
+        transform:translateX(-50%);
+    }
+    .notfound_linkwrapper{
+        font-size:1rem;
+    }
+}

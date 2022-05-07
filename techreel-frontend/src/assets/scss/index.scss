@@ -1,0 +1,62 @@
+* , *::before , *::after {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+$primary-color:#0026ff;
+$secondary-color:#f0f0f0;
+$secondary-font:'Roboto Slab', serif;
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size:14px;
+    scroll-behavior:smooth;
+}
+@mixin useFlexbox($justify-content , $align-items){
+    display:flex;
+    justify-content:$justify-content;
+    align-items:$align-items;
+}
+@mixin useGrid($grid-columns){
+    display:grid;
+    grid-template-columns: $grid-columns;
+    padding:2rem;
+    gap:2rem;
+    @media screen and (max-width:700px){
+        display: block;
+        padding:1.3rem;
+    }
+}
+@mixin transformTraslateXCenter($position){
+    position:$position;
+    left:50%;
+    transform: translateX(-50%);
+}
+@mixin transformTranslateYpos($percent,$position){
+    position:$position;
+    top:($percent);
+    transform:translateY(-$percent)
+}
+@mixin transformTranslatePos($xPercent , $yPercent , $position){
+    position:$position;
+    left:$xPercent;
+    top:$yPercent;
+    transform: translate(-$xPercent , -$yPercent);
+}
+@mixin useSecondaryFont{
+    font-family:$secondary-font;
+}
+@import 'layout';
+@import 'emptystate';
+@import 'primaryLayout';
+@import 'secondaryLayout';
+@import 'home';
+@import 'blogpostcard';
+@import 'popularposts';
+@import 'article';
+@import 'notfound';
+@import 'siteInfo';
+@import 'search';
+@import 'tags';
+@import 'policies';
+@import 'skel';
+@import 'newsLetter';

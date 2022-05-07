@@ -1,0 +1,94 @@
+.skeleton {
+    background:#ddd;
+    margin:.4rem auto;
+}
+.skeleton_containter{
+    padding:.5rem;
+    background:#f2f2f2;
+    border-radius:.3rem;
+    position:relative;
+    overflow:hidden;
+}
+.skel_blogPostCard{
+    margin:1rem auto;
+    width:100%;
+}
+.skel_blogPostImage{
+    height:250px;
+    width:100%;
+    border-radius:.2rem;
+}
+.skel_blogPostText {
+    height:1.3rem;
+    border-radius:.3rem;
+}
+.skel_blogPostTag{
+    width:5rem;
+    height:1.6rem;
+    border-radius:1rem;
+}
+.skel_blogPostTags {
+    display:inline-flex;
+    gap:.5rem;
+}
+.skel_blogPostExert{
+    height:100px;
+    width:100%;
+    border-radius:.2rem;
+}
+
+// shimmer
+.shimmer-wrapper {
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    animation:loading 2s infinite;
+}
+.shimmer {
+    width:50%;
+    height:100%;
+    background:rgba(white , .2);
+    transform:skewX(-20deg);
+    box-shadow:0 0 30px 30px rgba(white , .005);
+}
+.skel_bigText{
+    width:9rem;
+    height: 2rem;
+    border-radius:.2rem;
+}
+.skel_contain {
+    width:fit-content;
+    margin:2rem auto 0 auto;
+}
+.skel_imageSmall{
+    width:45%;
+    height:100px;
+}
+.skel_flex {
+    @include useFlexbox(center , flex-start);
+    margin:.4rem 0;
+    .skel_blogPostText{
+        width:40%;
+    }
+}
+.skel_featuredImage{
+    width: 100%;
+    height:100%;
+}
+.skel_100{
+    height: 100%;
+    &:first-child {
+        grid-row:span 2;
+    }
+}
+.skel_featured {
+    padding:.5rem;
+}
+@keyframes loading {
+    0% {transform: translateX(150%)};
+    50% {transform: translateX(-60%)};
+    100% {transform: translateX(150%)};
+
+}
