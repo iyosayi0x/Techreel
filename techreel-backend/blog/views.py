@@ -19,7 +19,7 @@ class BlogPostListView(ListAPIView):
     pagination_class = BlogPostPagination
     queryset = BlogPost.objects.all().filter(
         featured=False).order_by('-date_created')
-    serializer_class = BlogPostSerializer
+    serializer_class = BlogPostSerializer_List
 
 
 class BlogPostSearchView(APIView):
